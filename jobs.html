@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Updates - Az Visa Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a56db',
+                        'primary-dark': '#1e429f',
+                        secondary: '#f59e0b',
+                        light: '#f8fafc',
+                        dark: '#1e293b',
+                        gray: '#64748b',
+                        success: '#10b981',
+                        danger: '#ef4444',
+                    },
+                    boxShadow: {
+                        'custom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'custom-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #1a56db;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #f59e0b;
+            border-radius: 2px;
+        }
+
+        .mobile-nav {
+            transition: all 0.3s ease;
+        }
+
+        .job-card {
+            transition: all 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .urgent-badge {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .filter-btn.active {
+            background: #1a56db;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 overflow-x-hidden">
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-95 shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="logo flex items-center">
+                    <a href="index.html" class="logo-text text-2xl font-bold text-primary">Az<span
+                            class="text-secondary">Visa</span></a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Home</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">About
+                                Us</a></li>
+                        <li><a href="services.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Services</a>
+                        </li>
+                        <li><a href="jobs.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Job
+                                Updates</a></li>
+                        <li><a href="faq.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">FAQ</a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Navigation Actions -->
+                <div class="nav-actions flex items-center">
+                    <div class="language-switcher mr-5 relative">
+                        <select class="py-2 px-4 rounded-lg border border-gray-300 bg-white cursor-pointer font-medium">
+                            <option value="en">English</option>
+                            <option value="bn">বাংলা</option>
+                        </select>
+                    </div>
+                    <a href="#"
+                        class="hidden sm:inline-block py-2 px-6 bg-transparent border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300">Login</a>
+                    <div class="mobile-toggle md:hidden text-xl cursor-pointer text-dark ml-4" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav id="nav"
+            class="mobile-nav md:hidden fixed top-16 left-[-100%] w-4/5 h-[calc(100vh-64px)] bg-white shadow-lg z-40">
+            <ul class="flex flex-col p-8 space-y-5">
+                <li><a href="index.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Home</a>
+                </li>
+                <li><a href="about.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">About
+                        Us</a></li>
+                <li><a href="services.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Services</a>
+                </li>
+                <li><a href="jobs.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Job
+                        Updates</a></li>
+                <li><a href="faq.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">FAQ</a>
+                </li>
+                <li><a href="contact.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Contact</a>
+                </li>
+                <li class="pt-4"><a href="#"
+                        class="py-3 px-6 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300 inline-block w-full text-center">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-40 pb-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Latest Job Opportunities</h1>
+                <p class="text-xl opacity-90">Stay updated with the latest G2G programs, embassy notices, and seasonal
+                    opportunities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Filters -->
+    <section class="py-12 bg-light">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="filter-section">
+                    <h3 class="text-lg font-semibold text-dark mb-3">Filter by Country:</h3>
+                    <div class="filter-buttons flex flex-wrap gap-2">
+                        <button
+                            class="filter-btn py-2 px-4 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300 active"
+                            data-country="all">All Countries</button>
+                        <button
+                            class="filter-btn py-2 px-4 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                            data-country="uae">UAE</button>
+                        <button
+                            class="filter-btn py-2 px-4 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                            data-country="poland">Poland</button>
+                        <button
+                            class="filter-btn py-2 px-4 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                            data-country="canada">Canada</button>
+                        <button
+                            class="filter-btn py-2 px-4 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                            data-country="saudi">Saudi Arabia</button>
+                    </div>
+                </div>
+
+                <div class="search-section">
+                    <div class="relative">
+                        <input type="text" placeholder="Search jobs..."
+                            class="py-2 px-4 pr-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-64">
+                        <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- G2G Programs -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="section-title text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Government to Government
+                    (G2G) Programs</h2>
+                <p class="text-gray max-w-2xl mx-auto">Official employment programs between Bangladesh and partner
+                    countries</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- G2G Program 1 -->
+                <div class="job-card bg-white rounded-xl shadow-custom p-6 border-l-4 border-primary">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">G2G
+                                Program</span>
+                            <span
+                                class="urgent-badge bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full ml-2">Urgent</span>
+                        </div>
+                        <span class="text-gray text-sm">Posted: June 20, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Malaysia Manufacturing Sector</h3>
+                    <div class="job-meta flex items-center text-gray mb-4">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span class="mr-4">Kuala Lumpur, Malaysia</span>
+                        <i class="fas fa-users mr-2"></i>
+                        <span>250 Positions</span>
+                    </div>
+                    <p class="text-gray mb-4">Government-approved recruitment for manufacturing workers in electronics
+                        and automotive sectors.</p>
+                    <div class="job-details mb-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Salary:</span>
+                            <span class="font-semibold">$500-700/month</span>
+                        </div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Contract:</span>
+                            <span class="font-semibold">2 Years</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray">Deadline:</span>
+                            <span class="font-semibold text-red-500">July 15, 2025</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="#"
+                            class="flex-1 py-2 bg-primary text-white text-center rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300">Apply
+                            Now</a>
+                        <a href="#"
+                            class="py-2 px-4 bg-light text-dark text-center rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300">Details</a>
+                    </div>
+                </div>
+
+                <!-- G2G Program 2 -->
+                <div class="job-card bg-white rounded-xl shadow-custom p-6 border-l-4 border-secondary">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-secondary text-white text-xs font-semibold px-3 py-1 rounded-full">G2G
+                                Program</span>
+                        </div>
+                        <span class="text-gray text-sm">Posted: June 18, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">South Korea EPS Program</h3>
+                    <div class="job-meta flex items-center text-gray mb-4">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span class="mr-4">Seoul, South Korea</span>
+                        <i class="fas fa-users mr-2"></i>
+                        <span>150 Positions</span>
+                    </div>
+                    <p class="text-gray mb-4">Employment Permit System for manufacturing and construction workers
+                        through government channel.</p>
+                    <div class="job-details mb-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Salary:</span>
+                            <span class="font-semibold">$1,500-2,000/month</span>
+                        </div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Contract:</span>
+                            <span class="font-semibold">3 Years</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray">Deadline:</span>
+                            <span class="font-semibold">July 30, 2025</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="#"
+                            class="flex-1 py-2 bg-primary text-white text-center rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300">Apply
+                            Now</a>
+                        <a href="#"
+                            class="py-2 px-4 bg-light text-dark text-center rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300">Details</a>
+                    </div>
+                </div>
+
+                <!-- G2G Program 3 -->
+                <div class="job-card bg-white rounded-xl shadow-custom p-6 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">G2G
+                                Program</span>
+                        </div>
+                        <span class="text-gray text-sm">Posted: June 15, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Japan SSW Program</h3>
+                    <div class="job-meta flex items-center text-gray mb-4">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span class="mr-4">Tokyo, Japan</span>
+                        <i class="fas fa-users mr-2"></i>
+                        <span>100 Positions</span>
+                    </div>
+                    <p class="text-gray mb-4">Specified Skilled Worker program for nursing care and food service
+                        industries.</p>
+                    <div class="job-details mb-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Salary:</span>
+                            <span class="font-semibold">$1,800-2,200/month</span>
+                        </div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Contract:</span>
+                            <span class="font-semibold">5 Years</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray">Deadline:</span>
+                            <span class="font-semibold">July 10, 2025</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="#"
+                            class="flex-1 py-2 bg-primary text-white text-center rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300">Apply
+                            Now</a>
+                        <a href="#"
+                            class="py-2 px-4 bg-light text-dark text-center rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Embassy Notices -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="section-title text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Embassy Notices &
+                    Updates</h2>
+                <p class="text-gray max-w-2xl mx-auto">Important announcements from embassies and immigration
+                    authorities</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Notice 1 -->
+                <div class="notice-item bg-white rounded-xl shadow-custom p-6 mb-6 border-l-4 border-primary">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-dark">UAE Embassy: New Visa Fee Structure</h3>
+                        <span
+                            class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Important</span>
+                    </div>
+                    <p class="text-gray mb-4">The UAE Embassy has announced revised visa fees effective from July 1,
+                        2025. All applications submitted after this date will be subject to the new fee structure.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray text-sm"><i class="far fa-clock mr-1"></i> Published: June 22,
+                            2025</span>
+                        <a href="#" class="text-primary font-semibold hover:underline">Read Full Notice</a>
+                    </div>
+                </div>
+
+                <!-- Notice 2 -->
+                <div class="notice-item bg-white rounded-xl shadow-custom p-6 mb-6 border-l-4 border-secondary">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-dark">Poland Work Permit Processing Time Update</h3>
+                        <span class="bg-secondary text-white text-xs font-semibold px-3 py-1 rounded-full">Update</span>
+                    </div>
+                    <p class="text-gray mb-4">The Polish immigration authorities have reduced work permit processing
+                        times from 90 to 60 days for specific sectors including IT, healthcare, and engineering.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray text-sm"><i class="far fa-clock mr-1"></i> Published: June 18,
+                            2025</span>
+                        <a href="#" class="text-primary font-semibold hover:underline">Read Full Notice</a>
+                    </div>
+                </div>
+
+                <!-- Notice 3 -->
+                <div class="notice-item bg-white rounded-xl shadow-custom p-6 mb-6 border-l-4 border-red-500">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-dark">Saudi Arabia: Temporary Suspension of Certain Visas</h3>
+                        <span class="bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Alert</span>
+                    </div>
+                    <p class="text-gray mb-4">The Saudi authorities have temporarily suspended issuance of work visas
+                        for the retail and hospitality sectors until further notice. Applications already in process
+                        will continue.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray text-sm"><i class="far fa-clock mr-1"></i> Published: June 15,
+                            2025</span>
+                        <a href="#" class="text-primary font-semibold hover:underline">Read Full Notice</a>
+                    </div>
+                </div>
+
+                <!-- Notice 4 -->
+                <div class="notice-item bg-white rounded-xl shadow-custom p-6 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-dark">Canada Express Entry Draw #285 Results</h3>
+                        <span class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">New</span>
+                    </div>
+                    <p class="text-gray mb-4">The latest Express Entry draw issued 3,250 invitations to apply for
+                        permanent residence. The minimum CRS score was 482 points. Next draw expected in two weeks.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray text-sm"><i class="far fa-clock mr-1"></i> Published: June 12,
+                            2025</span>
+                        <a href="#" class="text-primary font-semibold hover:underline">Read Full Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Opportunities -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="section-title text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Seasonal Opportunities
+                </h2>
+                <p class="text-gray max-w-2xl mx-auto">Time-sensitive employment opportunities with specific application
+                    periods</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Seasonal Job 1 -->
+                <div
+                    class="seasonal-job bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl shadow-custom p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="bg-white text-primary text-xs font-semibold px-3 py-1 rounded-full">Agriculture</span>
+                        <span class="text-white text-sm">Season: Summer 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Poland Berry Picking Season</h3>
+                    <p class="mb-4 opacity-90">Urgent requirement for 500 agricultural workers for the summer berry
+                        harvesting season in Poland.</p>
+                    <div class="job-details mb-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Duration:</span>
+                            <span class="font-semibold">3 Months (July-Sept)</span>
+                        </div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Salary:</span>
+                            <span class="font-semibold">€1,200-1,500/month</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Application Deadline:</span>
+                            <span class="font-semibold">June 30, 2025</span>
+                        </div>
+                    </div>
+                    <a href="#"
+                        class="w-full py-3 bg-secondary text-white text-center rounded-lg font-semibold hover:bg-amber-600 transition-all duration-300 inline-block">Apply
+                        Now</a>
+                </div>
+
+                <!-- Seasonal Job 2 -->
+                <div
+                    class="seasonal-job bg-gradient-to-r from-secondary to-amber-600 text-white rounded-xl shadow-custom p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="bg-white text-secondary text-xs font-semibold px-3 py-1 rounded-full">Tourism</span>
+                        <span class="text-white text-sm">Season: Winter 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">UAE Hotel Staff for Tourist Season</h3>
+                    <p class="mb-4 opacity-90">Multiple positions available in Dubai and Abu Dhabi hotels for the
+                        upcoming winter tourist season.</p>
+                    <div class="job-details mb-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Duration:</span>
+                            <span class="font-semibold">6 Months (Nov-Apr)</span>
+                        </div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Salary:</span>
+                            <span class="font-semibold">$800-1,200/month</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Application Deadline:</span>
+                            <span class="font-semibold">August 15, 2025</span>
+                        </div>
+                    </div>
+                    <a href="#"
+                        class="w-full py-3 bg-primary text-white text-center rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300 inline-block">Apply
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Alerts Subscription -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-2xl mx-auto text-center bg-white rounded-xl shadow-custom p-8 md:p-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4">Get Job Alerts</h2>
+                <p class="text-gray mb-6">Subscribe to receive the latest job opportunities directly to your email</p>
+                <form class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Enter your email"
+                        class="flex-1 py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <button type="submit"
+                        class="py-3 px-6 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300">Subscribe</button>
+                </form>
+                <p class="text-gray text-sm mt-4">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-20 pb-10">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Az Visa Consultancy</h3>
+                    <p class="mb-6 text-gray-300">Your trusted partner for overseas employment and visa processing with
+                        a commitment to excellence and client satisfaction.</p>
+                    <div class="social-links flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Quick Links</h3>
+                    <ul>
+                        <li class="mb-3"><a href="index.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Home</a>
+                        </li>
+                        <li class="mb-3"><a href="about.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">About
+                                Us</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Services</a>
+                        </li>
+                        <li class="mb-3"><a href="jobs.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Job
+                                Updates</a></li>
+                        <li class="mb-3"><a href="faq.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Our Services</h3>
+                    <ul>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">UAE
+                                Visa Processing</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Poland
+                                Work Visa</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Overseas
+                                Employment</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Documentation
+                                Support</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Visa
+                                Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Contact Us</h3>
+                    <div class="contact-info flex items-start mb-4">
+                        <div class="contact-icon text-secondary text-lg mr-4 mt-1">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <p class="text-gray-300">123 Business Avenue, Commercial District, Dhaka, Bangladesh</p>
+                    </div>
+                    <div class="contact-info flex items-start mb-4">
+                        <div class="contact-icon text-secondary text-lg mr-4 mt-1">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <p class="text-gray-300">+880 1234-567890</p>
+                    </div>
+                    <div class="contact-info flex items-start">
+                        <div class="contact-icon text-secondary text-lg mr-4 mt-1">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p class="text-gray-300">info@azvisa.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright text-center pt-8 border-t border-gray-700 text-gray-400 text-sm">
+                <p>&copy; 2025 Az Visa Consultancy. All Rights Reserved. | Developed by TechNovaBD</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg z-50 hover:scale-110 transition-transform duration-300 cursor-pointer"
+        id="whatsappToggle">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const nav = document.getElementById('nav');
+
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('left-[-100%]');
+            nav.classList.toggle('left-0');
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('bg-opacity-98', 'shadow-lg');
+                header.classList.remove('bg-opacity-95', 'shadow-md');
+            } else {
+                header.classList.remove('bg-opacity-98', 'shadow-lg');
+                header.classList.add('bg-opacity-95', 'shadow-md');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.add('left-[-100%]');
+                nav.classList.remove('left-0');
+            });
+        });
+
+        // Filter Buttons
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                // In a real implementation, you would filter jobs here
+                const country = btn.getAttribute('data-country');
+                if (country === 'all') {
+                    // Show all jobs
+                    alert('Showing all job opportunities');
+                } else {
+                    // Filter by country
+                    alert(`Filtering jobs for ${country.toUpperCase()}. In the full implementation, jobs would be filtered dynamically.`);
+                }
+            });
+        });
+
+        // WhatsApp Button
+        const whatsappToggle = document.getElementById('whatsappToggle');
+        whatsappToggle.addEventListener('click', () => {
+            window.open('https://wa.me/8801234567890', '_blank');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Az Visa Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a56db',
+                        'primary-dark': '#1e429f',
+                        secondary: '#f59e0b',
+                        light: '#f8fafc',
+                        dark: '#1e293b',
+                        gray: '#64748b',
+                        success: '#10b981',
+                        danger: '#ef4444',
+                    },
+                    boxShadow: {
+                        'custom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'custom-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #1a56db;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #f59e0b;
+            border-radius: 2px;
+        }
+
+        .mobile-nav {
+            transition: all 0.3s ease;
+        }
+
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            transition: all 0.3s ease;
+        }
+
+        .faq-question.active {
+            background: #f1f5f9;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+        }
+
+        .category-btn.active {
+            background: #1a56db;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 overflow-x-hidden">
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-95 shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="logo flex items-center">
+                    <a href="index.html" class="logo-text text-2xl font-bold text-primary">Az<span
+                            class="text-secondary">Visa</span></a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Home</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">About
+                                Us</a></li>
+                        <li><a href="services.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Services</a>
+                        </li>
+                        <li><a href="jobs.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Job
+                                Updates</a></li>
+                        <li><a href="faq.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">FAQ</a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Navigation Actions -->
+                <div class="nav-actions flex items-center">
+                    <div class="language-switcher mr-5 relative">
+                        <select class="py-2 px-4 rounded-lg border border-gray-300 bg-white cursor-pointer font-medium">
+                            <option value="en">English</option>
+                            <option value="bn">বাংলা</option>
+                        </select>
+                    </div>
+                    <a href="#"
+                        class="hidden sm:inline-block py-2 px-6 bg-transparent border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300">Login</a>
+                    <div class="mobile-toggle md:hidden text-xl cursor-pointer text-dark ml-4" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav id="nav"
+            class="mobile-nav md:hidden fixed top-16 left-[-100%] w-4/5 h-[calc(100vh-64px)] bg-white shadow-lg z-40">
+            <ul class="flex flex-col p-8 space-y-5">
+                <li><a href="index.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Home</a>
+                </li>
+                <li><a href="about.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">About
+                        Us</a></li>
+                <li><a href="services.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Services</a>
+                </li>
+                <li><a href="jobs.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Job
+                        Updates</a></li>
+                <li><a href="faq.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">FAQ</a>
+                </li>
+                <li><a href="contact.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Contact</a>
+                </li>
+                <li class="pt-4"><a href="#"
+                        class="py-3 px-6 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300 inline-block w-full text-center">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-40 pb-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Frequently Asked Questions</h1>
+                <p class="text-xl opacity-90">Find answers to common questions about our visa services and processes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Categories -->
+    <section class="py-12 bg-light">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button
+                    class="category-btn py-2 px-6 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300 active"
+                    data-category="all">All Questions</button>
+                <button
+                    class="category-btn py-2 px-6 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                    data-category="general">General</button>
+                <button
+                    class="category-btn py-2 px-6 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                    data-category="uae">UAE Visa</button>
+                <button
+                    class="category-btn py-2 px-6 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                    data-category="poland">Poland Visa</button>
+                <button
+                    class="category-btn py-2 px-6 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                    data-category="documents">Documents</button>
+                <button
+                    class="category-btn py-2 px-6 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                    data-category="processing">Processing</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- General Questions -->
+                <div class="faq-category mb-12" data-category="general">
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-8">General Questions</h2>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">What is the success rate of Az Visa Consultancy?
+                            </h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">We maintain a 98% success rate for visa applications. Our experienced
+                                team ensures that all applications are thoroughly prepared and meet the specific
+                                requirements of each embassy. We carefully screen each case before submission to
+                                maximize approval chances.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">How long has Az Visa Consultancy been in
+                                business?</h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">We have been providing visa consultancy services since 2013, with over
+                                10 years of experience in the industry. Our long-standing presence has allowed us to
+                                build strong relationships with embassies and immigration authorities worldwide.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">What makes Az Visa different from other
+                                consultancies?</h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">Our differentiating factors include:</p>
+                            <ul class="text-gray mt-2 ml-6 list-disc">
+                                <li>Government-licensed and BAIRA registered</li>
+                                <li>Transparent pricing with no hidden costs</li>
+                                <li>Personalized case handling with dedicated consultants</li>
+                                <li>Regular updates throughout the application process</li>
+                                <li>Post-visa settlement support</li>
+                                <li>Strong track record with thousands of successful cases</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UAE Visa Questions -->
+                <div class="faq-category mb-12" data-category="uae">
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-8">UAE Visa Questions</h2>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">What is the processing time for a UAE work visa?
+                            </h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">The standard processing time for a UAE work visa is approximately 2-3
+                                weeks from the date of application submission. However, this can vary depending on the
+                                emirate, type of employment, and current embassy workload. We provide regular updates
+                                throughout the process.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">What are the medical requirements for UAE
+                                employment visa?</h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">All UAE employment visa applicants must undergo a medical examination
+                                which includes:</p>
+                            <ul class="text-gray mt-2 ml-6 list-disc">
+                                <li>Chest X-ray for tuberculosis screening</li>
+                                <li>Blood test for HIV/AIDS, hepatitis B and C, and syphilis</li>
+                                <li>General health check-up</li>
+                                <li>Additional tests may be required for specific professions</li>
+                            </ul>
+                            <p class="text-gray mt-2">We coordinate the medical examination at approved centers and
+                                handle all related documentation.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">Can I change jobs in the UAE after getting a
+                                work visa?</h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">Yes, under the current UAE labor laws, employees can change jobs after
+                                completing their contract period (typically 2 years) or by mutual agreement with the
+                                employer. There are specific procedures to follow for job transfer, including obtaining
+                                a No Objection Certificate (NOC) from your current employer and applying for a new work
+                                permit. We can assist with job transfer procedures when needed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poland Visa Questions -->
+                <div class="faq-category mb-12" data-category="poland">
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-8">Poland Visa Questions</h2>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">What types of work visas are available for
+                                Poland?</h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">Poland offers several types of work visas and permits:</p>
+                            <ul class="text-gray mt-2 ml-6 list-disc">
+                                <li><strong>Type A Work Permit:</strong> For employment with a Polish employer</li>
+                                <li><strong>Type B Work Permit:</strong> For board members in Polish companies</li>
+                                <li><strong>Type C Work Permit:</strong> For foreign employers sending employees to
+                                    Poland</li>
+                                <li><strong>Type D Work Permit:</strong> For seasonal employment (up to 9 months)</li>
+                                <li><strong>Type E Work Permit:</strong> For intra-company transfers</li>
+                                <li><strong>EU Blue Card:</strong> For highly qualified professionals</li>
+                            </ul>
+                            <p class="text-gray mt-2">We help determine the most suitable option based on your
+                                qualifications and employment situation.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">How long does it take to get a Poland work visa?
+                            </h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">The processing time for a Poland work visa typically takes 60-90 days
+                                from application submission. This includes:</p>
+                            <ul class="text-gray mt-2 ml-6 list-disc">
+                                <li>Work permit application processing: 30-60 days</li>
+                                <li>Visa application after work permit approval: 15-30 days</li>
+                            </ul>
+                            <p class="text-gray mt-2">We monitor the application status closely and provide regular
+                                updates throughout the process.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">Can my family join me in Poland?</h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">Yes, family reunification is possible in Poland. After obtaining your
+                                work permit and visa, your immediate family members (spouse and minor children) can
+                                apply for residence permits to join you. The requirements include:</p>
+                            <ul class="text-gray mt-2 ml-6 list-disc">
+                                <li>Proof of relationship (marriage certificate, birth certificates)</li>
+                                <li>Proof of adequate accommodation in Poland</li>
+                                <li>Proof of sufficient financial means to support family members</li>
+                                <li>Valid health insurance</li>
+                            </ul>
+                            <p class="text-gray mt-2">We provide comprehensive assistance for family reunification
+                                applications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Questions -->
+                <div class="faq-category mb-12" data-category="documents">
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-8">Document Questions</h2>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">What documents are typically required for visa
+                                applications?</h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">While requirements vary by country and visa type, common documents
+                                include:</p>
+                            <ul class="text-gray mt-2 ml-6 list-disc">
+                                <li>Valid passport (with at least 6 months validity)</li>
+                                <li>Passport-sized photographs meeting specific requirements</li>
+                                <li>Completed visa application forms</li>
+                                <li>Educational certificates and transcripts</li>
+                                <li>Professional experience certificates</li>
+                                <li>Police clearance certificate</li>
+                                <li>Medical examination reports</li>
+                                <li>Proof of financial means</li>
+                                <li>Employment contract or job offer letter</li>
+                                <li>Bank statements</li>
+                            </ul>
+                            <p class="text-gray mt-2">We provide a customized document checklist based on your specific
+                                visa category and destination country.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">Do I need to get my documents translated?</h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">Yes, most countries require that documents not in their official
+                                language be translated by a certified translator. The requirements vary by country:</p>
+                            <ul class="text-gray mt-2 ml-6 list-disc">
+                                <li><strong>Poland:</strong> Documents must be translated into Polish by a sworn
+                                    translator</li>
+                                <li><strong>UAE:</strong> Documents in English are generally accepted, Arabic
+                                    translation may be required for certain documents</li>
+                                <li><strong>Canada:</strong> English or French translations required</li>
+                                <li><strong>UK:</strong> English translations required</li>
+                            </ul>
+                            <p class="text-gray mt-2">We work with certified translation services to ensure your
+                                documents meet the specific requirements of each country.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Processing Questions -->
+                <div class="faq-category mb-12" data-category="processing">
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-8">Processing Questions</h2>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">How can I track my visa application status?</h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">We provide multiple ways to track your application status:</p>
+                            <ul class="text-gray mt-2 ml-6 list-disc">
+                                <li><strong>Online Portal:</strong> Access our client portal with your unique login
+                                    credentials</li>
+                                <li><strong>Mobile App:</strong> Track your application through our mobile application
+                                </li>
+                                <li><strong>Email Updates:</strong> Regular email notifications at each stage of the
+                                    process</li>
+                                <li><strong>Dedicated Consultant:</strong> Direct communication with your assigned visa
+                                    consultant</li>
+                                <li><strong>SMS Alerts:</strong> Important updates via SMS</li>
+                            </ul>
+                            <p class="text-gray mt-2">You'll receive your tracking details immediately after we submit
+                                your application.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-custom mb-4 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-dark">What happens if my visa application is rejected?
+                            </h3>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray">In the rare event of a visa rejection, we take the following steps:</p>
+                            <ul class="text-gray mt-2 ml-6 list-disc">
+                                <li>Analyze the rejection reasons provided by the embassy</li>
+                                <li>Provide a detailed assessment of what went wrong</li>
+                                <li>Develop a strategy to address the issues in a reapplication</li>
+                                <li>Assist with gathering additional supporting documents if needed</li>
+                                <li>Submit an appeal if applicable and worthwhile</li>
+                                <li>Provide guidance on alternative options</li>
+                            </ul>
+                            <p class="text-gray mt-2">Our reapplication success rate is over 85% when we address the
+                                specific reasons for initial rejection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Still Have Questions -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-2xl mx-auto text-center bg-white rounded-xl shadow-custom p-8 md:p-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4">Still Have Questions?</h2>
+                <p class="text-gray mb-6">Can't find the answer you're looking for? Please contact our team.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contact.html"
+                        class="py-3 px-6 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300">Contact
+                        Us</a>
+                    <a href="tel:+8801234567890"
+                        class="py-3 px-6 bg-secondary text-white rounded-lg font-semibold hover:bg-amber-600 transition-all duration-300">
+                        <i class="fas fa-phone mr-2"></i>
+                        Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-20 pb-10">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Az Visa Consultancy</h3>
+                    <p class="mb-6 text-gray-300">Your trusted partner for overseas employment and visa processing with
+                        a commitment to excellence and client satisfaction.</p>
+                    <div class="social-links flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Quick Links</h3>
+                    <ul>
+                        <li class="mb-3"><a href="index.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Home</a>
+                        </li>
+                        <li class="mb-3"><a href="about.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">About
+                                Us</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Services</a>
+                        </li>
+                        <li class="mb-3"><a href="jobs.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Job
+                                Updates</a></li>
+                        <li class="mb-3"><a href="faq.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Our Services</h3>
+                    <ul>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">UAE
+                                Visa Processing</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Poland
+                                Work Visa</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Overseas
+                                Employment</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Documentation
+                                Support</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Visa
+                                Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Contact Us</h3>
+                    <div class="contact-info flex items-start mb-4">
+                        <div class="contact-icon text-secondary text-lg mr-4 mt-1">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <p class="text-gray-300">123 Business Avenue, Commercial District, Dhaka, Bangladesh</p>
+                    </div>
+                    <div class="contact-info flex items-start mb-4">
+                        <div class="contact-icon text-secondary text-lg mr-4 mt-1">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <p class="text-gray-300">+880 1234-567890</p>
+                    </div>
+                    <div class="contact-info flex items-start">
+                        <div class="contact-icon text-secondary text-lg mr-4 mt-1">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p class="text-gray-300">info@azvisa.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright text-center pt-8 border-t border-gray-700 text-gray-400 text-sm">
+                <p>&copy; 2025 Az Visa Consultancy. All Rights Reserved. | Developed by TechNovaBD</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg z-50 hover:scale-110 transition-transform duration-300 cursor-pointer"
+        id="whatsappToggle">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const nav = document.getElementById('nav');
+
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('left-[-100%]');
+            nav.classList.toggle('left-0');
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('bg-opacity-98', 'shadow-lg');
+                header.classList.remove('bg-opacity-95', 'shadow-md');
+            } else {
+                header.classList.remove('bg-opacity-98', 'shadow-lg');
+                header.classList.add('bg-opacity-95', 'shadow-md');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.add('left-[-100%]');
+                nav.classList.remove('left-0');
+            });
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+
+                // Close all other FAQs
+                faqQuestions.forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('open');
+                });
+
+                // Toggle current FAQ
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('open');
+                }
+            });
+        });
+
+        // Category Filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const faqCategories = document.querySelectorAll('.faq-category');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const category = btn.getAttribute('data-category');
+
+                // Show/hide FAQ categories
+                faqCategories.forEach(cat => {
+                    if (category === 'all' || cat.getAttribute('data-category') === category) {
+                        cat.style.display = 'block';
+                    } else {
+                        cat.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // WhatsApp Button
+        const whatsappToggle = document.getElementById('whatsappToggle');
+        whatsappToggle.addEventListener('click', () => {
+            window.open('https://wa.me/8801234567890', '_blank');
+        });
+    </script>
+</body>
+
+</html>
