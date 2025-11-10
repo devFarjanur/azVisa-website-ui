@@ -1,0 +1,2490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Az Visa Consultancy - Your Trusted Visa Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a56db',
+                        'primary-dark': '#1e429f',
+                        secondary: '#f59e0b',
+                        light: '#f8fafc',
+                        dark: '#1e293b',
+                        gray: '#64748b',
+                        success: '#10b981',
+                        danger: '#ef4444',
+                    },
+                    boxShadow: {
+                        'custom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'custom-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                        'glow': '0 0 20px rgba(37, 99, 235, 0.3)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 2s infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -468px 0;
+            }
+
+            100% {
+                background-position: 468px 0;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .mobile-nav {
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #1a56db;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #f59e0b;
+            border-radius: 2px;
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-item {
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #f59e0b;
+        }
+
+        .whatsapp-button {
+            animation: pulse 2s infinite;
+        }
+
+        /* WhatsApp Chatbot Styles - FIXED */
+        .chatbot-container {
+            transform: translateY(100%);
+            transition: transform 0.3s ease-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .chatbot-container.open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            margin-bottom: 10px;
+            animation: slideUp 0.2s ease-out;
+        }
+
+        .user-message {
+            background: #1a56db;
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+
+        .bot-message {
+            background: #f1f5f9;
+            color: #1e293b;
+            margin-right: auto;
+            border-bottom-left-radius: 4px;
+        }
+
+        .typing-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            margin: 0 2px;
+            animation: bounce-slow 1.3s infinite;
+        }
+
+        .typing-indicator:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .typing-indicator:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(#f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* New Sections Styles */
+        .process-steps .step {
+            transition: all 0.3s ease;
+        }
+
+        .process-steps .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .country-flag {
+            transition: all 0.3s ease;
+        }
+
+        .country:hover .country-flag {
+            transform: scale(1.1);
+        }
+
+        /* New Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stagger-animation>* {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .stagger-animation>*:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .stagger-animation>*:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-animation>*:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .stagger-animation>*:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .stagger-animation>*:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .stagger-animation>*:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        /* Enhanced Hero Section */
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(26, 86, 219, 0.9) 0%, rgba(30, 66, 159, 0.9) 100%), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Enhanced Cards */
+        .enhanced-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .enhanced-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .enhanced-card:hover::before {
+            left: 100%;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Progress Bar Animation */
+        .progress-bar {
+            width: 0;
+            transition: width 2s ease-in-out;
+        }
+
+        .animate-progress {
+            width: 100%;
+        }
+
+        /* Shimmer Effect */
+        .shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        /* Accordion Styles */
+        .accordion-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .accordion-header {
+            cursor: pointer;
+            padding: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 500px;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #1a56db;
+            box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+        }
+
+        /* Job Filter Styles */
+        .job-filter {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        .job-card {
+            transition: all 0.3s ease;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Team Member Styles */
+        .team-member {
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-social {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .team-social {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 overflow-x-hidden">
+    <!-- Enhanced Header -->
+    <header id="header"
+        class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center py-4">
+                <!-- Enhanced Logo -->
+                <div class="logo flex items-center">
+                    <a href="index.html" class="logo-text text-2xl font-bold text-primary flex items-center">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white mr-2">
+                            <i class="fas fa-passport text-sm"></i>
+                        </div>
+                        Az<span class="text-secondary">Visa</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Home</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">About
+                                Us</a></li>
+                        <li><a href="services.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Services</a>
+                        </li>
+                        <li><a href="jobs.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Job
+                                Updates</a></li>
+                        <li><a href="faq.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">FAQ</a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Navigation Actions -->
+                <div class="nav-actions flex items-center space-x-4">
+                    <div class="language-switcher relative">
+                        <select
+                            class="py-2 px-4 rounded-lg border border-gray-300 bg-white cursor-pointer font-medium text-sm">
+                            <option value="en">🇺🇸 English</option>
+                            <option value="bn">🇧🇩 বাংলা</option>
+                        </select>
+                    </div>
+                    <a href="login.html"
+                        class="hidden sm:inline-block py-2 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">Login</a>
+                    <div class="mobile-toggle md:hidden text-xl cursor-pointer text-dark" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav id="nav"
+            class="mobile-nav md:hidden fixed top-16 left-[-100%] w-4/5 h-[calc(100vh-64px)] bg-white/95 backdrop-blur-sm shadow-lg z-40">
+            <ul class="flex flex-col p-8 space-y-5">
+                <li><a href="index.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
+                        <i class="fas fa-home mr-3 w-5"></i>Home</a>
+                </li>
+                <li><a href="about.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
+                        <i class="fas fa-info-circle mr-3 w-5"></i>About Us</a></li>
+                <li><a href="services.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
+                        <i class="fas fa-concierge-bell mr-3 w-5"></i>Services</a>
+                </li>
+                <li><a href="jobs.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
+                        <i class="fas fa-briefcase mr-3 w-5"></i>Job Updates</a></li>
+                <li><a href="faq.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
+                        <i class="fas fa-question-circle mr-3 w-5"></i>FAQ</a>
+                </li>
+                <li><a href="contact.html"
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
+                        <i class="fas fa-phone-alt mr-3 w-5"></i>Contact</a>
+                </li>
+                <li class="pt-4 border-t border-gray-200 mt-4">
+                    <a href="login.html"
+                        class="py-3 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 inline-block w-full text-center">
+                        <i class="fas fa-user mr-2"></i>Login
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main class="pt-20">
+        <!-- About Us Page -->
+        <section id="about-page" class="hidden">
+            <!-- Page Header -->
+            <div class="page-header py-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+                <div class="container mx-auto px-4 sm:px-6 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">About Az Visa Consultancy</h1>
+                    <p class="text-xl max-w-3xl mx-auto opacity-90">Your trusted partner for global opportunities with
+                        over a decade of excellence in visa and immigration services.</p>
+                </div>
+            </div>
+
+            <!-- Company Story -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div class="fade-in-up">
+                                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Our Journey</h2>
+                                <p class="text-gray mb-6 text-lg leading-relaxed">Founded in 2013, Az Visa Consultancy
+                                    began with a simple mission: to make international opportunities accessible to
+                                    everyone. What started as a small team of passionate immigration experts has grown
+                                    into a trusted consultancy serving thousands of clients worldwide.</p>
+                                <p class="text-gray mb-6 text-lg leading-relaxed">Over the years, we've helped more than
+                                    5,000 individuals and families achieve their dreams of working, studying, and
+                                    settling abroad. Our commitment to excellence, transparency, and personalized
+                                    service has earned us a reputation as one of the most reliable visa consultancies in
+                                    the region.</p>
+                                <div class="flex flex-wrap gap-4 mt-8">
+                                    <div class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg font-medium">
+                                        <i class="fas fa-calendar-check mr-2"></i>10+ Years Experience
+                                    </div>
+                                    <div class="bg-green-50 text-green-700 px-4 py-2 rounded-lg font-medium">
+                                        <i class="fas fa-users mr-2"></i>5,000+ Happy Clients
+                                    </div>
+                                    <div class="bg-amber-50 text-amber-700 px-4 py-2 rounded-lg font-medium">
+                                        <i class="fas fa-globe mr-2"></i>15+ Countries
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative fade-in-up">
+                                <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-8 text-white">
+                                    <div class="text-center mb-8">
+                                        <div
+                                            class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-bullseye text-3xl"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-bold mb-2">Our Mission</h3>
+                                        <p class="opacity-90">To provide expert, ethical, and personalized visa
+                                            consultancy services that empower individuals to achieve their international
+                                            career and life goals.</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div
+                                            class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-eye text-3xl"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-bold mb-2">Our Vision</h3>
+                                        <p class="opacity-90">To be the most trusted and innovative visa consultancy,
+                                            recognized for our commitment to client success and global mobility
+                                            solutions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Values -->
+            <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="section-title text-center mb-16 fade-in-up">
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Our Values</h2>
+                        <p class="text-gray max-w-2xl mx-auto text-lg">The principles that guide everything we do</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-animation">
+                        <div class="text-center group flex">
+                            <div
+                                class="enhanced-card bg-white rounded-2xl shadow-custom p-8 hover:shadow-glow transition-all duration-300 flex flex-col h-full">
+                                <div class="relative inline-block mb-6">
+                                    <div
+                                        class="h-20 w-20 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center text-white text-2xl mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-dark mb-4">Integrity</h3>
+                                <p class="text-gray mb-6 flex-grow">We believe in complete transparency and honesty in
+                                    all our dealings. Our clients trust us because we always put their interests first.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="text-center group flex">
+                            <div
+                                class="enhanced-card bg-white rounded-2xl shadow-custom p-8 hover:shadow-glow transition-all duration-300 flex flex-col h-full">
+                                <div class="relative inline-block mb-6">
+                                    <div
+                                        class="h-20 w-20 bg-gradient-to-br from-secondary to-amber-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-dark mb-4">Expertise</h3>
+                                <p class="text-gray mb-6 flex-grow">Our team consists of certified immigration
+                                    consultants who stay updated with the latest policies and requirements across
+                                    countries.</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center group flex">
+                            <div
+                                class="enhanced-card bg-white rounded-2xl shadow-custom p-8 hover:shadow-glow transition-all duration-300 flex flex-col h-full">
+                                <div class="relative inline-block mb-6">
+                                    <div
+                                        class="h-20 w-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-dark mb-4">Care</h3>
+                                <p class="text-gray mb-6 flex-grow">We understand that visa applications can be
+                                    stressful. That's why we provide personalized support and guidance at every step of
+                                    the journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Team -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="section-title text-center mb-16 fade-in-up">
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Meet Our Team
+                        </h2>
+                        <p class="text-gray max-w-2xl mx-auto text-lg">Our dedicated team of certified immigration
+                            consultants and support staff</p>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto stagger-animation">
+                        <!-- Team Member 1 -->
+                        <div
+                            class="team-member enhanced-card bg-white rounded-2xl shadow-custom overflow-hidden text-center">
+                            <div class="relative overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member"
+                                    class="w-full h-64 object-cover">
+                                <div
+                                    class="team-social absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                    <a href="#"
+                                        class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                        <i class="fab fa-linkedin-in text-xs"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                        <i class="fab fa-twitter text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-dark mb-1">Abdul Rahman</h3>
+                                <p class="text-secondary font-medium mb-3">Founder & CEO</p>
+                                <p class="text-gray text-sm">With 15+ years in immigration consultancy, Abdul leads our
+                                    team with vision and expertise.</p>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 2 -->
+                        <div
+                            class="team-member enhanced-card bg-white rounded-2xl shadow-custom overflow-hidden text-center">
+                            <div class="relative overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member"
+                                    class="w-full h-64 object-cover">
+                                <div
+                                    class="team-social absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                    <a href="#"
+                                        class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                        <i class="fab fa-linkedin-in text-xs"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                        <i class="fab fa-twitter text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-dark mb-1">Fatima Ahmed</h3>
+                                <p class="text-secondary font-medium mb-3">Senior Immigration Consultant</p>
+                                <p class="text-gray text-sm">Specializing in European work visas with a 95% success rate
+                                    for her clients.</p>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 3 -->
+                        <div
+                            class="team-member enhanced-card bg-white rounded-2xl shadow-custom overflow-hidden text-center">
+                            <div class="relative overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Team Member"
+                                    class="w-full h-64 object-cover">
+                                <div
+                                    class="team-social absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                    <a href="#"
+                                        class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                        <i class="fab fa-linkedin-in text-xs"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                        <i class="fab fa-twitter text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-dark mb-1">Kamal Hossain</h3>
+                                <p class="text-secondary font-medium mb-3">Documentation Specialist</p>
+                                <p class="text-gray text-sm">Expert in preparing and verifying all required documents
+                                    for visa applications.</p>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 4 -->
+                        <div
+                            class="team-member enhanced-card bg-white rounded-2xl shadow-custom overflow-hidden text-center">
+                            <div class="relative overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team Member"
+                                    class="w-full h-64 object-cover">
+                                <div
+                                    class="team-social absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                    <a href="#"
+                                        class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                        <i class="fab fa-linkedin-in text-xs"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                        <i class="fab fa-twitter text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-dark mb-1">Ayesha Begum</h3>
+                                <p class="text-secondary font-medium mb-3">Client Relations Manager</p>
+                                <p class="text-gray text-sm">Ensuring our clients receive exceptional support throughout
+                                    their visa journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements -->
+            <section class="py-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="text-center mb-16 fade-in-up">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Achievements</h2>
+                            <p class="text-xl opacity-90 max-w-2xl mx-auto">Milestones that reflect our commitment to
+                                excellence</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-animation">
+                            <div
+                                class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                                <div class="text-4xl md:text-5xl font-bold mb-3">5,000+</div>
+                                <div class="font-medium">Successful Visas</div>
+                            </div>
+                            <div
+                                class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                                <div class="text-4xl md:text-5xl font-bold mb-3">98%</div>
+                                <div class="font-medium">Success Rate</div>
+                            </div>
+                            <div
+                                class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                                <div class="text-4xl md:text-5xl font-bold mb-3">15+</div>
+                                <div class="font-medium">Countries</div>
+                            </div>
+                            <div
+                                class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                                <div class="text-4xl md:text-5xl font-bold mb-3">10+</div>
+                                <div class="font-medium">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Services Page -->
+        <section id="services-page" class="hidden">
+            <!-- Page Header -->
+            <div class="page-header py-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+                <div class="container mx-auto px-4 sm:px-6 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Premium Visa Services</h1>
+                    <p class="text-xl max-w-3xl mx-auto opacity-90">Comprehensive visa solutions tailored to your unique
+                        needs and aspirations</p>
+                </div>
+            </div>
+
+            <!-- Services List -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
+                            <!-- Service 1 -->
+                            <div
+                                class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                                <div class="p-8 text-center relative">
+                                    <div
+                                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary-dark">
+                                    </div>
+                                    <div
+                                        class="service-icon h-20 w-20 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-passport"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-dark mb-4">UAE Visa Processing</h3>
+                                    <p class="text-gray mb-6 leading-relaxed">Complete visa processing for employment,
+                                        business, and tourist visas to the United Arab Emirates.</p>
+                                    <div class="flex justify-between items-center text-sm mb-6">
+                                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-clock mr-1"></i> 2-3 weeks
+                                        </span>
+                                        <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-check-circle mr-1"></i> 95%
+                                        </span>
+                                    </div>
+                                    <a href="#"
+                                        class="inline-block py-3 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
+                                        Learn More
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Service 2 -->
+                            <div
+                                class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                                <div class="p-8 text-center relative">
+                                    <div
+                                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-amber-600">
+                                    </div>
+                                    <div
+                                        class="service-icon h-20 w-20 bg-gradient-to-br from-secondary to-amber-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-plane"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-dark mb-4">Poland Work Visa</h3>
+                                    <p class="text-gray mb-6 leading-relaxed">Specialized assistance for work permits
+                                        and employment visas to Poland with job placement support.</p>
+                                    <div class="flex justify-between items-center text-sm mb-6">
+                                        <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-clock mr-1"></i> 4-6 weeks
+                                        </span>
+                                        <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-check-circle mr-1"></i> 92%
+                                        </span>
+                                    </div>
+                                    <a href="#"
+                                        class="inline-block py-3 px-6 bg-gradient-to-r from-secondary to-amber-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
+                                        Learn More
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Service 3 -->
+                            <div
+                                class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                                <div class="p-8 text-center relative">
+                                    <div
+                                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-600">
+                                    </div>
+                                    <div
+                                        class="service-icon h-20 w-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-dark mb-4">Overseas Employment</h3>
+                                    <p class="text-gray mb-6 leading-relaxed">Connecting skilled professionals with
+                                        international job opportunities across various sectors.</p>
+                                    <div class="flex justify-between items-center text-sm mb-6">
+                                        <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-clock mr-1"></i> 6-8 weeks
+                                        </span>
+                                        <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-check-circle mr-1"></i> 90%
+                                        </span>
+                                    </div>
+                                    <a href="#"
+                                        class="inline-block py-3 px-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
+                                        Learn More
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Service 4 -->
+                            <div
+                                class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                                <div class="p-8 text-center relative">
+                                    <div
+                                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-600">
+                                    </div>
+                                    <div
+                                        class="service-icon h-20 w-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-file-contract"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-dark mb-4">Documentation Support</h3>
+                                    <p class="text-gray mb-6 leading-relaxed">Expert guidance in preparing and verifying
+                                        all required documents for visa applications.</p>
+                                    <div class="flex justify-between items-center text-sm mb-6">
+                                        <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-clock mr-1"></i> 1-2 weeks
+                                        </span>
+                                        <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-check-circle mr-1"></i> 98%
+                                        </span>
+                                    </div>
+                                    <a href="#"
+                                        class="inline-block py-3 px-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
+                                        Learn More
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Service 5 -->
+                            <div
+                                class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                                <div class="p-8 text-center relative">
+                                    <div
+                                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600">
+                                    </div>
+                                    <div
+                                        class="service-icon h-20 w-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-user-check"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-dark mb-4">Visa Consultation</h3>
+                                    <p class="text-gray mb-6 leading-relaxed">Personalized consultation to determine the
+                                        best visa options based on your qualifications.</p>
+                                    <div class="flex justify-between items-center text-sm mb-6">
+                                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-clock mr-1"></i> Immediate
+                                        </span>
+                                        <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-star mr-1"></i> Free
+                                        </span>
+                                    </div>
+                                    <a href="#"
+                                        class="inline-block py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
+                                        Learn More
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Service 6 -->
+                            <div
+                                class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                                <div class="p-8 text-center relative">
+                                    <div
+                                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-indigo-600">
+                                    </div>
+                                    <div
+                                        class="service-icon h-20 w-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <i class="fas fa-headset"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-dark mb-4">Post-Visa Support</h3>
+                                    <p class="text-gray mb-6 leading-relaxed">Continued assistance after visa approval
+                                        including travel arrangements and settlement guidance.</p>
+                                    <div class="flex justify-between items-center text-sm mb-6">
+                                        <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-clock mr-1"></i> Ongoing
+                                        </span>
+                                        <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                            <i class="fas fa-check-circle mr-1"></i> 24/7
+                                        </span>
+                                    </div>
+                                    <a href="#"
+                                        class="inline-block py-3 px-6 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
+                                        Learn More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Service Process -->
+            <section class="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="section-title text-center mb-16 fade-in-up">
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">How Our Service
+                            Process Works</h2>
+                        <p class="text-gray max-w-2xl mx-auto text-lg">A streamlined approach to ensure your visa
+                            application success</p>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 stagger-animation">
+                            <div class="text-center">
+                                <div
+                                    class="bg-white rounded-full w-16 h-16 flex items-center justify-center text-primary text-xl font-bold mx-auto mb-4 shadow-lg">
+                                    1</div>
+                                <h3 class="font-bold text-dark mb-2">Consultation</h3>
+                                <p class="text-gray text-sm">Free assessment of your profile and options</p>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="bg-white rounded-full w-16 h-16 flex items-center justify-center text-primary text-xl font-bold mx-auto mb-4 shadow-lg">
+                                    2</div>
+                                <h3 class="font-bold text-dark mb-2">Documentation</h3>
+                                <p class="text-gray text-sm">Preparation and verification of all documents</p>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="bg-white rounded-full w-16 h-16 flex items-center justify-center text-primary text-xl font-bold mx-auto mb-4 shadow-lg">
+                                    3</div>
+                                <h3 class="font-bold text-dark mb-2">Application</h3>
+                                <p class="text-gray text-sm">Submission and follow-up with authorities</p>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="bg-white rounded-full w-16 h-16 flex items-center justify-center text-primary text-xl font-bold mx-auto mb-4 shadow-lg">
+                                    4</div>
+                                <h3 class="font-bold text-dark mb-2">Approval</h3>
+                                <p class="text-gray text-sm">Visa approval and post-arrival support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="py-20 bg-gradient-to-r from-primary to-primary-dark text-white text-center">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-3xl mx-auto fade-in-up">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Visa Journey?</h2>
+                        <p class="text-xl mb-8 opacity-95">Get expert guidance tailored to your specific needs and goals
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="contact.html"
+                                class="py-4 px-8 bg-secondary text-white rounded-lg font-semibold hover:bg-amber-600 transition-all duration-300 transform hover:-translate-y-1 shadow-custom hover:shadow-glow text-lg">
+                                Get Free Consultation
+                            </a>
+                            <a href="tel:+8801234567890"
+                                class="py-4 px-8 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 shadow-custom hover:shadow-glow text-lg">
+                                Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Job Updates Page -->
+        <section id="jobs-page" class="hidden">
+            <!-- Page Header -->
+            <div class="page-header py-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+                <div class="container mx-auto px-4 sm:px-6 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Latest Job Opportunities</h1>
+                    <p class="text-xl max-w-3xl mx-auto opacity-90">Find your dream job abroad with our verified
+                        international employment opportunities</p>
+                </div>
+            </div>
+
+            <!-- Job Filters -->
+            <section class="py-12 bg-gray-50">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="job-filter">
+                            <h3 class="text-xl font-bold text-dark mb-6">Filter Jobs</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <div class="form-group">
+                                    <label class="form-label">Country</label>
+                                    <select class="form-input">
+                                        <option value="">All Countries</option>
+                                        <option value="uae">UAE</option>
+                                        <option value="poland">Poland</option>
+                                        <option value="canada">Canada</option>
+                                        <option value="uk">UK</option>
+                                        <option value="australia">Australia</option>
+                                        <option value="singapore">Singapore</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Job Category</label>
+                                    <select class="form-input">
+                                        <option value="">All Categories</option>
+                                        <option value="it">IT & Technology</option>
+                                        <option value="healthcare">Healthcare</option>
+                                        <option value="construction">Construction</option>
+                                        <option value="hospitality">Hospitality</option>
+                                        <option value="engineering">Engineering</option>
+                                        <option value="education">Education</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Experience Level</label>
+                                    <select class="form-input">
+                                        <option value="">All Levels</option>
+                                        <option value="fresher">Fresher</option>
+                                        <option value="mid">1-3 Years</option>
+                                        <option value="senior">3+ Years</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Salary Range</label>
+                                    <select class="form-input">
+                                        <option value="">All Ranges</option>
+                                        <option value="low">$1000 - $2000</option>
+                                        <option value="medium">$2000 - $4000</option>
+                                        <option value="high">$4000+</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="flex justify-end mt-6">
+                                <button
+                                    class="py-3 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300">
+                                    <i class="fas fa-filter mr-2"></i>Apply Filters
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Job Listings -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="flex justify-between items-center mb-8">
+                            <h2 class="text-2xl md:text-3xl font-bold text-dark">Available Positions</h2>
+                            <div class="text-gray">Showing <span class="font-bold text-primary">24</span> jobs</div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-6 stagger-animation">
+                            <!-- Job 1 -->
+                            <div
+                                class="job-card enhanced-card bg-white rounded-2xl shadow-custom p-6 border-l-4 border-primary">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                    <div class="flex-1">
+                                        <div class="flex items-start mb-4">
+                                            <div
+                                                class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-primary mr-4">
+                                                <i class="fas fa-laptop-code text-xl"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-dark mb-1">Senior Software Engineer
+                                                </h3>
+                                                <div class="flex flex-wrap gap-2 mb-2">
+                                                    <span
+                                                        class="bg-blue-50 text-blue-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-map-marker-alt mr-1"></i>Poland
+                                                    </span>
+                                                    <span
+                                                        class="bg-green-50 text-green-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-briefcase mr-1"></i>IT & Technology
+                                                    </span>
+                                                    <span
+                                                        class="bg-amber-50 text-amber-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-clock mr-1"></i>Full-time
+                                                    </span>
+                                                </div>
+                                                <p class="text-gray mb-4">We're looking for an experienced Software
+                                                    Engineer to join our growing tech team in Warsaw. Must have 3+ years
+                                                    of experience with Java and Spring Boot.</p>
+                                                <div class="flex flex-wrap gap-4 text-sm text-gray">
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-dollar-sign mr-1 text-green-500"></i>
+                                                        <span>$3000 - $4500/month</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-calendar-alt mr-1 text-blue-500"></i>
+                                                        <span>Posted 2 days ago</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-users mr-1 text-purple-500"></i>
+                                                        <span>12 applicants</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 md:mt-0 md:ml-6">
+                                        <a href="#"
+                                            class="block w-full md:w-auto py-3 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 text-center">
+                                            Apply Now
+                                        </a>
+                                        <button
+                                            class="mt-2 w-full md:w-auto py-2 px-4 border border-primary text-primary rounded-lg font-medium hover:bg-blue-50 transition-colors duration-300 text-center">
+                                            Save Job
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Job 2 -->
+                            <div
+                                class="job-card enhanced-card bg-white rounded-2xl shadow-custom p-6 border-l-4 border-secondary">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                    <div class="flex-1">
+                                        <div class="flex items-start mb-4">
+                                            <div
+                                                class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-secondary mr-4">
+                                                <i class="fas fa-user-nurse text-xl"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-dark mb-1">Registered Nurse</h3>
+                                                <div class="flex flex-wrap gap-2 mb-2">
+                                                    <span
+                                                        class="bg-blue-50 text-blue-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-map-marker-alt mr-1"></i>UAE
+                                                    </span>
+                                                    <span
+                                                        class="bg-green-50 text-green-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-briefcase mr-1"></i>Healthcare
+                                                    </span>
+                                                    <span
+                                                        class="bg-amber-50 text-amber-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-clock mr-1"></i>Full-time
+                                                    </span>
+                                                </div>
+                                                <p class="text-gray mb-4">Leading hospital in Dubai seeks qualified
+                                                    nurses with 2+ years of experience. Must have valid nursing license
+                                                    and BLS certification.</p>
+                                                <div class="flex flex-wrap gap-4 text-sm text-gray">
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-dollar-sign mr-1 text-green-500"></i>
+                                                        <span>$2500 - $3500/month</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-calendar-alt mr-1 text-blue-500"></i>
+                                                        <span>Posted 5 days ago</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-users mr-1 text-purple-500"></i>
+                                                        <span>28 applicants</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 md:mt-0 md:ml-6">
+                                        <a href="#"
+                                            class="block w-full md:w-auto py-3 px-6 bg-gradient-to-r from-secondary to-amber-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 text-center">
+                                            Apply Now
+                                        </a>
+                                        <button
+                                            class="mt-2 w-full md:w-auto py-2 px-4 border border-secondary text-secondary rounded-lg font-medium hover:bg-amber-50 transition-colors duration-300 text-center">
+                                            Save Job
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Job 3 -->
+                            <div
+                                class="job-card enhanced-card bg-white rounded-2xl shadow-custom p-6 border-l-4 border-green-500">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                    <div class="flex-1">
+                                        <div class="flex items-start mb-4">
+                                            <div
+                                                class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-500 mr-4">
+                                                <i class="fas fa-hard-hat text-xl"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-dark mb-1">Civil Engineer</h3>
+                                                <div class="flex flex-wrap gap-2 mb-2">
+                                                    <span
+                                                        class="bg-blue-50 text-blue-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-map-marker-alt mr-1"></i>Canada
+                                                    </span>
+                                                    <span
+                                                        class="bg-green-50 text-green-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-briefcase mr-1"></i>Engineering
+                                                    </span>
+                                                    <span
+                                                        class="bg-amber-50 text-amber-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-clock mr-1"></i>Contract
+                                                    </span>
+                                                </div>
+                                                <p class="text-gray mb-4">Major construction firm in Toronto requires
+                                                    Civil Engineers for infrastructure projects. P.Eng certification
+                                                    preferred.</p>
+                                                <div class="flex flex-wrap gap-4 text-sm text-gray">
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-dollar-sign mr-1 text-green-500"></i>
+                                                        <span>$4000 - $5500/month</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-calendar-alt mr-1 text-blue-500"></i>
+                                                        <span>Posted 1 week ago</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-users mr-1 text-purple-500"></i>
+                                                        <span>15 applicants</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 md:mt-0 md:ml-6">
+                                        <a href="#"
+                                            class="block w-full md:w-auto py-3 px-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 text-center">
+                                            Apply Now
+                                        </a>
+                                        <button
+                                            class="mt-2 w-full md:w-auto py-2 px-4 border border-green-500 text-green-500 rounded-lg font-medium hover:bg-green-50 transition-colors duration-300 text-center">
+                                            Save Job
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Job 4 -->
+                            <div
+                                class="job-card enhanced-card bg-white rounded-2xl shadow-custom p-6 border-l-4 border-purple-500">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                    <div class="flex-1">
+                                        <div class="flex items-start mb-4">
+                                            <div
+                                                class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-500 mr-4">
+                                                <i class="fas fa-utensils text-xl"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-dark mb-1">Executive Chef</h3>
+                                                <div class="flex flex-wrap gap-2 mb-2">
+                                                    <span
+                                                        class="bg-blue-50 text-blue-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-map-marker-alt mr-1"></i>Singapore
+                                                    </span>
+                                                    <span
+                                                        class="bg-green-50 text-green-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-briefcase mr-1"></i>Hospitality
+                                                    </span>
+                                                    <span
+                                                        class="bg-amber-50 text-amber-700 text-sm px-3 py-1 rounded-full">
+                                                        <i class="fas fa-clock mr-1"></i>Full-time
+                                                    </span>
+                                                </div>
+                                                <p class="text-gray mb-4">Luxury hotel in Singapore seeks experienced
+                                                    Executive Chef with 5+ years in fine dining. Culinary degree
+                                                    required.</p>
+                                                <div class="flex flex-wrap gap-4 text-sm text-gray">
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-dollar-sign mr-1 text-green-500"></i>
+                                                        <span>$3500 - $5000/month</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-calendar-alt mr-1 text-blue-500"></i>
+                                                        <span>Posted 3 days ago</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-users mr-1 text-purple-500"></i>
+                                                        <span>9 applicants</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 md:mt-0 md:ml-6">
+                                        <a href="#"
+                                            class="block w-full md:w-auto py-3 px-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 text-center">
+                                            Apply Now
+                                        </a>
+                                        <button
+                                            class="mt-2 w-full md:w-auto py-2 px-4 border border-purple-500 text-purple-500 rounded-lg font-medium hover:bg-purple-50 transition-colors duration-300 text-center">
+                                            Save Job
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="flex justify-center mt-12">
+                            <nav class="flex items-center space-x-2">
+                                <a href="#"
+                                    class="px-4 py-2 border border-gray-300 rounded-lg text-gray-500 hover:bg-gray-50 transition-colors">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-primary bg-primary text-white rounded-lg font-medium">1</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">2</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">3</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-gray-300 rounded-lg text-gray-500 hover:bg-gray-50 transition-colors">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Job Alert CTA -->
+            <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Get Job Alerts</h2>
+                        <p class="text-gray text-lg mb-8 max-w-2xl mx-auto">Stay updated with the latest international
+                            job opportunities matching your profile</p>
+                        <div class="bg-white rounded-2xl shadow-custom p-8 max-w-2xl mx-auto">
+                            <form class="flex flex-col sm:flex-row gap-4">
+                                <input type="email" placeholder="Enter your email"
+                                    class="flex-1 py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                                <button type="submit"
+                                    class="py-3 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300">
+                                    Subscribe
+                                </button>
+                            </form>
+                            <p class="text-gray text-sm mt-4 text-center">
+                                <i class="fas fa-lock mr-1 text-green-500"></i>
+                                We respect your privacy. Unsubscribe at any time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- FAQ Page -->
+        <section id="faq-page" class="hidden">
+            <!-- Page Header -->
+            <div class="page-header py-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+                <div class="container mx-auto px-4 sm:px-6 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+                    <p class="text-xl max-w-3xl mx-auto opacity-90">Find answers to common questions about our visa and
+                        immigration services</p>
+                </div>
+            </div>
+
+            <!-- FAQ Content -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-4xl mx-auto">
+                        <!-- Search Bar -->
+                        <div class="mb-12">
+                            <div class="relative">
+                                <input type="text" placeholder="Search for questions..."
+                                    class="w-full py-4 px-6 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 shadow-sm">
+                                <button
+                                    class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary transition-colors">
+                                    <i class="fas fa-search text-xl"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Categories -->
+                        <div class="flex flex-wrap gap-4 mb-12 justify-center">
+                            <button
+                                class="px-6 py-3 bg-primary text-white rounded-lg font-semibold transition-all duration-300">All
+                                Questions</button>
+                            <button
+                                class="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300">Visa
+                                Process</button>
+                            <button
+                                class="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300">Documentation</button>
+                            <button
+                                class="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300">Fees
+                                & Payment</button>
+                            <button
+                                class="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300">After
+                                Approval</button>
+                        </div>
+
+                        <!-- FAQ Accordion -->
+                        <div class="space-y-4 stagger-animation">
+                            <!-- FAQ Item 1 -->
+                            <div
+                                class="accordion-item enhanced-card bg-white rounded-2xl shadow-custom overflow-hidden">
+                                <div class="accordion-header p-6 flex justify-between items-center cursor-pointer">
+                                    <h3 class="text-xl font-bold text-dark">What documents do I need for a work visa
+                                        application?</h3>
+                                    <div class="accordion-icon text-primary">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                                <div class="accordion-content px-6">
+                                    <div class="pb-6">
+                                        <p class="text-gray mb-4">The specific documents required vary by country and
+                                            visa type, but generally include:</p>
+                                        <ul class="list-disc pl-6 text-gray space-y-2">
+                                            <li>Valid passport with at least 6 months validity</li>
+                                            <li>Completed visa application form</li>
+                                            <li>Passport-sized photographs</li>
+                                            <li>Employment contract or job offer letter</li>
+                                            <li>Educational certificates and transcripts</li>
+                                            <li>Professional experience certificates</li>
+                                            <li>Police clearance certificate</li>
+                                            <li>Medical examination reports</li>
+                                            <li>Proof of financial means</li>
+                                        </ul>
+                                        <p class="text-gray mt-4">Our consultants will provide you with a customized
+                                            document checklist based on your specific situation and destination country.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 2 -->
+                            <div
+                                class="accordion-item enhanced-card bg-white rounded-2xl shadow-custom overflow-hidden">
+                                <div class="accordion-header p-6 flex justify-between items-center cursor-pointer">
+                                    <h3 class="text-xl font-bold text-dark">How long does the visa processing take?</h3>
+                                    <div class="accordion-icon text-primary">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                                <div class="accordion-content px-6">
+                                    <div class="pb-6">
+                                        <p class="text-gray mb-4">Processing times vary depending on the country and
+                                            type of visa:</p>
+                                        <ul class="list-disc pl-6 text-gray space-y-2">
+                                            <li><strong>UAE Work Visa:</strong> 2-3 weeks</li>
+                                            <li><strong>Poland Work Visa:</strong> 4-6 weeks</li>
+                                            <li><strong>Canada Work Permit:</strong> 8-12 weeks</li>
+                                            <li><strong>UK Work Visa:</strong> 3-6 weeks</li>
+                                            <li><strong>Australia Skilled Visa:</strong> 6-9 months</li>
+                                            <li><strong>Singapore Employment Pass:</strong> 3-8 weeks</li>
+                                        </ul>
+                                        <p class="text-gray mt-4">These are average processing times and can vary based
+                                            on individual circumstances and embassy workload. We provide regular updates
+                                            on your application status throughout the process.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 3 -->
+                            <div
+                                class="accordion-item enhanced-card bg-white rounded-2xl shadow-custom overflow-hidden">
+                                <div class="accordion-header p-6 flex justify-between items-center cursor-pointer">
+                                    <h3 class="text-xl font-bold text-dark">What is your success rate for visa
+                                        approvals?</h3>
+                                    <div class="accordion-icon text-primary">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                                <div class="accordion-content px-6">
+                                    <div class="pb-6">
+                                        <p class="text-gray mb-4">We maintain an overall success rate of 98% across all
+                                            our visa services. Here's our success rate by visa type:</p>
+                                        <ul class="list-disc pl-6 text-gray space-y-2">
+                                            <li><strong>UAE Work Visa:</strong> 95% success rate</li>
+                                            <li><strong>Poland Work Visa:</strong> 92% success rate</li>
+                                            <li><strong>Canada Study Visa:</strong> 90% success rate</li>
+                                            <li><strong>UK Work Visa:</strong> 88% success rate</li>
+                                            <li><strong>Australia Skilled Migration:</strong> 85% success rate</li>
+                                            <li><strong>Documentation Services:</strong> 98% success rate</li>
+                                        </ul>
+                                        <p class="text-gray mt-4">Our high success rate is attributed to our thorough
+                                            document verification, expert guidance, and personalized approach to each
+                                            application.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 4 -->
+                            <div
+                                class="accordion-item enhanced-card bg-white rounded-2xl shadow-custom overflow-hidden">
+                                <div class="accordion-header p-6 flex justify-between items-center cursor-pointer">
+                                    <h3 class="text-xl font-bold text-dark">Do you provide job placement services?</h3>
+                                    <div class="accordion-icon text-primary">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                                <div class="accordion-content px-6">
+                                    <div class="pb-6">
+                                        <p class="text-gray mb-4">Yes, we offer comprehensive job placement services for
+                                            selected countries and industries. Our job placement services include:</p>
+                                        <ul class="list-disc pl-6 text-gray space-y-2">
+                                            <li>Job matching based on your skills and experience</li>
+                                            <li>Interview preparation and coaching</li>
+                                            <li>Resume/CV writing services</li>
+                                            <li>Employer introduction and referral</li>
+                                            <li>Salary negotiation support</li>
+                                            <li>Pre-departure orientation</li>
+                                        </ul>
+                                        <p class="text-gray mt-4">We have partnerships with employers in various sectors
+                                            across our destination countries. However, job placement is subject to your
+                                            qualifications, experience, and market availability.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 5 -->
+                            <div
+                                class="accordion-item enhanced-card bg-white rounded-2xl shadow-custom overflow-hidden">
+                                <div class="accordion-header p-6 flex justify-between items-center cursor-pointer">
+                                    <h3 class="text-xl font-bold text-dark">What happens if my visa application is
+                                        rejected?</h3>
+                                    <div class="accordion-icon text-primary">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                                <div class="accordion-content px-6">
+                                    <div class="pb-6">
+                                        <p class="text-gray mb-4">In the rare event that your visa application is
+                                            rejected, we provide the following support:</p>
+                                        <ul class="list-disc pl-6 text-gray space-y-2">
+                                            <li>Detailed analysis of the rejection reasons</li>
+                                            <li>Guidance on addressing the issues that led to rejection</li>
+                                            <li>Assistance with preparing a stronger application for re-submission</li>
+                                            <li>Appeal process guidance where applicable</li>
+                                            <li>Alternative visa options exploration</li>
+                                        </ul>
+                                        <p class="text-gray mt-4">We offer a partial refund or credit toward future
+                                            services according to our refund policy. Our team will work closely with you
+                                            to understand the reasons for rejection and develop a strategy for a
+                                            successful reapplication.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 6 -->
+                            <div
+                                class="accordion-item enhanced-card bg-white rounded-2xl shadow-custom overflow-hidden">
+                                <div class="accordion-header p-6 flex justify-between items-center cursor-pointer">
+                                    <h3 class="text-xl font-bold text-dark">How much do your services cost?</h3>
+                                    <div class="accordion-icon text-primary">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                                <div class="accordion-content px-6">
+                                    <div class="pb-6">
+                                        <p class="text-gray mb-4">Our service fees vary based on the type of visa,
+                                            destination country, and complexity of your case. Here's an overview of our
+                                            pricing structure:</p>
+                                        <ul class="list-disc pl-6 text-gray space-y-2">
+                                            <li><strong>Free Initial Consultation:</strong> No charge</li>
+                                            <li><strong>UAE Work Visa:</strong> Starting from $500</li>
+                                            <li><strong>Poland Work Visa:</strong> Starting from $800</li>
+                                            <li><strong>Canada Work Permit:</strong> Starting from $1,200</li>
+                                            <li><strong>UK Work Visa:</strong> Starting from $1,000</li>
+                                            <li><strong>Documentation Services:</strong> Starting from $300</li>
+                                        </ul>
+                                        <p class="text-gray mt-4">These fees are exclusive of government application
+                                            fees, which vary by country. We provide a detailed breakdown of all costs
+                                            during your consultation. We also offer payment plans for eligible clients.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Still Have Questions -->
+                        <div class="mt-16 text-center">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Still have questions?</h3>
+                            <p class="text-gray mb-8 max-w-2xl mx-auto">Can't find the answer you're looking for? Please
+                                chat with our friendly team.</p>
+                            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                                <a href="contact.html"
+                                    class="py-3 px-8 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300">
+                                    Contact Us
+                                </a>
+                                <button id="whatsappFaq"
+                                    class="py-3 px-8 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-all duration-300">
+                                    <i class="fab fa-whatsapp mr-2"></i>Chat on WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact-page" class="hidden">
+            <!-- Page Header -->
+            <div class="page-header py-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+                <div class="container mx-auto px-4 sm:px-6 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
+                    <p class="text-xl max-w-3xl mx-auto opacity-90">We're here to help you with all your visa and
+                        immigration needs</p>
+                </div>
+            </div>
+
+            <!-- Contact Content -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                            <!-- Contact Information -->
+                            <div class="lg:col-span-1">
+                                <h2 class="text-3xl font-bold text-dark mb-8">Contact Information</h2>
+
+                                <div class="space-y-8">
+                                    <div class="flex items-start">
+                                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                            <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-dark mb-1">Our Office</h3>
+                                            <p class="text-gray">123 Business Avenue, Commercial District<br>Dhaka,
+                                                Bangladesh</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 p-3 rounded-lg mr-4">
+                                            <i class="fas fa-phone text-green-500 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-dark mb-1">Phone Number</h3>
+                                            <p class="text-gray">+880 1234-567890<br>+880 1234-567891</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="bg-amber-100 p-3 rounded-lg mr-4">
+                                            <i class="fas fa-envelope text-amber-500 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-dark mb-1">Email Address</h3>
+                                            <p class="text-gray">info@azvisa.com<br>support@azvisa.com</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                                            <i class="fas fa-clock text-purple-500 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-dark mb-1">Working Hours</h3>
+                                            <p class="text-gray">Sunday - Thursday: 9AM - 6PM<br>Friday: 9AM -
+                                                1PM<br>Saturday: Closed</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-8">
+                                    <h3 class="font-bold text-dark mb-4">Follow Us</h3>
+                                    <div class="flex space-x-4">
+                                        <a href="#"
+                                            class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#"
+                                            class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#"
+                                            class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="#"
+                                            class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Form -->
+                            <div class="lg:col-span-2">
+                                <div class="bg-gray-50 rounded-2xl p-8">
+                                    <h2 class="text-3xl font-bold text-dark mb-6">Send us a Message</h2>
+                                    <form id="contactForm">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="firstName">First Name</label>
+                                                <input type="text" id="firstName" class="form-input" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" for="lastName">Last Name</label>
+                                                <input type="text" id="lastName" class="form-input" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="email">Email Address</label>
+                                                <input type="email" id="email" class="form-input" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" for="phone">Phone Number</label>
+                                                <input type="tel" id="phone" class="form-input" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-label" for="subject">Subject</label>
+                                            <input type="text" id="subject" class="form-input" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-label" for="service">Service Interested In</label>
+                                            <select id="service" class="form-input" required>
+                                                <option value="">Select a service</option>
+                                                <option value="uae">UAE Visa Processing</option>
+                                                <option value="poland">Poland Work Visa</option>
+                                                <option value="overseas">Overseas Employment</option>
+                                                <option value="documentation">Documentation Support</option>
+                                                <option value="consultation">Visa Consultation</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-label" for="message">Message</label>
+                                            <textarea id="message" rows="5" class="form-input" required></textarea>
+                                        </div>
+
+                                        <button type="submit"
+                                            class="w-full py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300">
+                                            Send Message
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <section class="py-0">
+                <div class="h-96 w-full bg-gray-200">
+                    <!-- Google Maps Embed -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.9024424301397!2d90.39108011538579!3d23.750858084589126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8bd552c2b3b%3A0x4e70f117856f0c22!2sBusiness%20Avenue%2C%20Dhaka%201212!5e0!3m2!1sen!2sbd!4v1642165788393!5m2!1sen!2sbd"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </section>
+        </section>
+
+        <!-- Login & Registration Page -->
+        <section id="login-page" class="hidden">
+            <!-- Page Header -->
+            <div class="page-header py-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+                <div class="container mx-auto px-4 sm:px-6 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Client Portal</h1>
+                    <p class="text-xl max-w-3xl mx-auto opacity-90">Access your account to track applications, upload
+                        documents, and communicate with our team</p>
+                </div>
+            </div>
+
+            <!-- Login/Registration Tabs -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-md mx-auto">
+                        <!-- Tab Navigation -->
+                        <div class="flex border-b border-gray-200 mb-8">
+                            <button id="loginTab"
+                                class="flex-1 py-4 font-semibold text-primary border-b-2 border-primary">Login</button>
+                            <button id="registerTab" class="flex-1 py-4 font-semibold text-gray-500">Register</button>
+                        </div>
+
+                        <!-- Login Form -->
+                        <div id="loginForm" class="space-y-6">
+                            <div class="form-group">
+                                <label class="form-label" for="loginEmail">Email Address</label>
+                                <input type="email" id="loginEmail" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="loginPassword">Password</label>
+                                <input type="password" id="loginPassword" class="form-input" required>
+                            </div>
+
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="remember"
+                                        class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                                    <label for="remember" class="ml-2 text-sm text-gray-700">Remember me</label>
+                                </div>
+                                <a href="#" class="text-sm text-primary hover:underline">Forgot password?</a>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300">
+                                Login to Account
+                            </button>
+
+                            <div class="text-center">
+                                <p class="text-gray">Or login with</p>
+                                <div class="flex justify-center space-x-4 mt-4">
+                                    <button
+                                        class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </button>
+                                    <button
+                                        class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white hover:bg-red-600 transition-colors">
+                                        <i class="fab fa-google"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Registration Form -->
+                        <div id="registerForm" class="space-y-6 hidden">
+                            <div class="form-group">
+                                <label class="form-label" for="regFirstName">First Name</label>
+                                <input type="text" id="regFirstName" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="regLastName">Last Name</label>
+                                <input type="text" id="regLastName" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="regEmail">Email Address</label>
+                                <input type="email" id="regEmail" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="regPhone">Phone Number</label>
+                                <input type="tel" id="regPhone" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="regPassword">Password</label>
+                                <input type="password" id="regPassword" class="form-input" required>
+                                <p class="text-xs text-gray mt-1">Must be at least 8 characters with uppercase,
+                                    lowercase, and number</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="regConfirmPassword">Confirm Password</label>
+                                <input type="password" id="regConfirmPassword" class="form-input" required>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input type="checkbox" id="agreeTerms"
+                                    class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary" required>
+                                <label for="agreeTerms" class="ml-2 text-sm text-gray-700">I agree to the <a href="#"
+                                        class="text-primary hover:underline">Terms of Service</a> and <a href="#"
+                                        class="text-primary hover:underline">Privacy Policy</a></label>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300">
+                                Create Account
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-8">Why Create an Account?</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="text-center">
+                                <div
+                                    class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-xl mx-auto mb-4">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3 class="font-bold text-dark mb-2">Track Applications</h3>
+                                <p class="text-gray text-sm">Monitor the status of your visa applications in real-time
+                                </p>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-white text-xl mx-auto mb-4">
+                                    <i class="fas fa-file-upload"></i>
+                                </div>
+                                <h3 class="font-bold text-dark mb-2">Upload Documents</h3>
+                                <p class="text-gray text-sm">Securely submit required documents through our portal</p>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-xl mx-auto mb-4">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <h3 class="font-bold text-dark mb-2">Direct Communication</h3>
+                                <p class="text-gray text-sm">Message your assigned consultant directly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-dark text-white pt-20 pb-10">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16 stagger-animation">
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Az Visa Consultancy</h3>
+                    <p class="mb-6 text-gray-300 leading-relaxed">Your trusted partner for overseas employment and visa
+                        processing with a commitment to excellence and client satisfaction.</p>
+                    <div class="social-links flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-glow">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-glow">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-glow">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-glow">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Quick Links</h3>
+                    <ul>
+                        <li class="mb-3"><a href="index.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Home</a>
+                        </li>
+                        <li class="mb-3"><a href="about.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>About Us</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Services</a>
+                        </li>
+                        <li class="mb-3"><a href="jobs.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Job Updates</a></li>
+                        <li class="mb-3"><a href="faq.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Our Services</h3>
+                    <ul>
+                        <li class="mb-3"><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>UAE Visa Processing</a></li>
+                        <li class="mb-3"><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Poland Work Visa</a></li>
+                        <li class="mb-3"><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Overseas Employment</a></li>
+                        <li class="mb-3"><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Documentation Support</a>
+                        </li>
+                        <li class="mb-3"><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Visa Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="text-xl font-bold mb-6 pb-2 relative">Contact Us</h3>
+                    <div class="contact-info flex items-start mb-4">
+                        <div class="contact-icon text-secondary text-lg mr-4 mt-1">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <p class="text-gray-300">123 Business Avenue, Commercial District, Dhaka, Bangladesh</p>
+                    </div>
+                    <div class="contact-info flex items-start mb-4">
+                        <div class="contact-icon text-secondary text-lg mr-4 mt-1">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <p class="text-gray-300">+880 1234-567890</p>
+                    </div>
+                    <div class="contact-info flex items-start">
+                        <div class="contact-icon text-secondary text-lg mr-4 mt-1">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p class="text-gray-300">info@azvisa.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright text-center pt-8 border-t border-gray-700 text-gray-400 text-sm">
+                <p>&copy; 2025 Az Visa Consultancy. All Rights Reserved. | Developed by TechNovaBD</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced WhatsApp Button -->
+    <div class="whatsapp-button fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg z-50 hover:scale-110 transition-transform duration-300 cursor-pointer hover:shadow-glow"
+        id="whatsappToggle">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- WhatsApp Chatbot -->
+    <div id="whatsappChatbot"
+        class="chatbot-container fixed bottom-24 right-8 w-80 h-96 bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden border border-gray-200">
+        <!-- Chat Header -->
+        <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-4 flex items-center">
+            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-green-500 mr-3">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <div>
+                <h3 class="font-bold">Az Visa Support</h3>
+                <p class="text-xs opacity-80">Typically replies instantly</p>
+            </div>
+            <button id="closeChatbot" class="ml-auto text-white hover:text-gray-200 transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="flex-1 p-4 overflow-y-auto bg-gray-50" id="chatMessages">
+            <div class="message bot-message">
+                <p>Hello! 👋 I'm your Az Visa assistant. How can I help you today?</p>
+            </div>
+            <div class="message bot-message">
+                <p>Choose an option:</p>
+                <div class="mt-2 space-y-2">
+                    <button
+                        class="quick-reply block w-full text-left p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors duration-200 hover:border-green-300"
+                        data-reply="Visa Requirements">
+                        <i class="fas fa-list-alt mr-2 text-green-500"></i>
+                        Visa Requirements
+                    </button>
+                    <button
+                        class="quick-reply block w-full text-left p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors duration-200 hover:border-green-300"
+                        data-reply="Application Status">
+                        <i class="fas fa-search mr-2 text-blue-500"></i>
+                        Application Status
+                    </button>
+                    <button
+                        class="quick-reply block w-full text-left p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors duration-200 hover:border-green-300"
+                        data-reply="Document Checklist">
+                        <i class="fas fa-file-alt mr-2 text-amber-500"></i>
+                        Document Checklist
+                    </button>
+                    <button
+                        class="quick-reply block w-full text-left p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors duration-200 hover:border-green-300"
+                        data-reply="Talk to Agent">
+                        <i class="fas fa-user-tie mr-2 text-purple-500"></i>
+                        Talk to Agent
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="p-3 border-t border-gray-200 bg-white">
+            <div class="flex items-center">
+                <input type="text" id="chatInput" placeholder="Type a message..."
+                    class="flex-1 py-2 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200">
+                <button id="sendMessage"
+                    class="ml-2 p-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const nav = document.getElementById('nav');
+
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('left-[-100%]');
+            nav.classList.toggle('left-0');
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('bg-white', 'shadow-lg');
+                header.classList.remove('bg-white/95', 'shadow-md');
+            } else {
+                header.classList.remove('bg-white', 'shadow-lg');
+                header.classList.add('bg-white/95', 'shadow-md');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.add('left-[-100%]');
+                nav.classList.remove('left-0');
+            });
+        });
+
+        // WhatsApp Chatbot Functionality
+        const whatsappToggle = document.getElementById('whatsappToggle');
+        const whatsappChatbot = document.getElementById('whatsappChatbot');
+        const closeChatbot = document.getElementById('closeChatbot');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendMessage = document.getElementById('sendMessage');
+        const quickReplies = document.querySelectorAll('.quick-reply');
+
+        // Toggle chatbot visibility
+        whatsappToggle.addEventListener('click', () => {
+            whatsappChatbot.classList.toggle('open');
+        });
+
+        closeChatbot.addEventListener('click', () => {
+            whatsappChatbot.classList.remove('open');
+        });
+
+        // Close chatbot when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!whatsappChatbot.contains(e.target) && !whatsappToggle.contains(e.target) && whatsappChatbot.classList.contains('open')) {
+                whatsappChatbot.classList.remove('open');
+            }
+        });
+
+        // Send message function
+        function sendUserMessage(message) {
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user-message';
+            userMessage.innerHTML = `<p>${message}</p>`;
+            chatMessages.appendChild(userMessage);
+
+            // Clear input
+            chatInput.value = '';
+
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Show typing indicator
+            const typingIndicator = document.createElement('div');
+            typingIndicator.className = 'message bot-message';
+            typingIndicator.id = 'typingIndicator';
+            typingIndicator.innerHTML = `
+                <div class="flex items-center">
+                    <div class="typing-indicator"></div>
+                    <div class="typing-indicator"></div>
+                    <div class="typing-indicator"></div>
+                </div>
+            `;
+            chatMessages.appendChild(typingIndicator);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Simulate bot response after delay
+            setTimeout(() => {
+                // Remove typing indicator
+                const indicator = document.getElementById('typingIndicator');
+                if (indicator) indicator.remove();
+
+                // Add bot response
+                const botMessage = document.createElement('div');
+                botMessage.className = 'message bot-message';
+
+                let response = '';
+                if (message.toLowerCase().includes('requirement')) {
+                    response = 'Visa requirements vary by country and visa type. For specific requirements, please contact our agents who can provide detailed information based on your destination and purpose of travel.';
+                } else if (message.toLowerCase().includes('status') || message.toLowerCase().includes('application')) {
+                    response = 'To check your application status, please use our online tracking system above or provide your reference number to our support team.';
+                } else if (message.toLowerCase().includes('document') || message.toLowerCase().includes('checklist')) {
+                    response = 'Common documents include passport, photographs, application forms, financial proofs, and supporting letters. The exact checklist depends on your destination country and visa type.';
+                } else if (message.toLowerCase().includes('agent') || message.toLowerCase().includes('human')) {
+                    response = 'I\'ll connect you with a human agent. Please wait a moment... <br><br> <a href="https://wa.me/+8801775282986" class="inline-block mt-2 py-2 px-4 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-colors" target="_blank">Chat with Agent on WhatsApp</a>';
+                } else {
+                    response = 'Thank you for your message. For detailed assistance with visa applications, requirements, or status checks, I recommend speaking with one of our visa specialists. Would you like me to connect you with an agent?';
+                }
+
+                botMessage.innerHTML = `<p>${response}</p>`;
+                chatMessages.appendChild(botMessage);
+
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1500);
+        }
+
+        // Send message on button click
+        sendMessage.addEventListener('click', () => {
+            const message = chatInput.value.trim();
+            if (message) {
+                sendUserMessage(message);
+            }
+        });
+
+        // Send message on Enter key
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const message = chatInput.value.trim();
+                if (message) {
+                    sendUserMessage(message);
+                }
+            }
+        });
+
+        // Quick reply buttons
+        quickReplies.forEach(button => {
+            button.addEventListener('click', () => {
+                const reply = button.getAttribute('data-reply');
+                sendUserMessage(reply);
+            });
+        });
+
+        // Animated Counter for Stats
+        function animateCounter() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(() => animateCounter(), 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Progress Bar Animation
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const target = bar.getAttribute('data-target');
+                bar.style.width = target + '%';
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('stats')) {
+                        animateCounter();
+                        animateProgressBars();
+                    }
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.section-title, .mission, .services, .updates, .stats, .cta');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Animate staggered elements immediately
+            const staggeredElements = document.querySelectorAll('.stagger-animation > *');
+            staggeredElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // FAQ Accordion Functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const isActive = header.classList.contains('active');
+
+                // Close all accordions
+                document.querySelectorAll('.accordion-header').forEach(h => {
+                    h.classList.remove('active');
+                });
+                document.querySelectorAll('.accordion-content').forEach(c => {
+                    c.classList.remove('active');
+                });
+
+                // Open clicked accordion if it wasn't active
+                if (!isActive) {
+                    header.classList.add('active');
+                    content.classList.add('active');
+                }
+            });
+        });
+
+        // Login/Registration Tabs
+        const loginTab = document.getElementById('loginTab');
+        const registerTab = document.getElementById('registerTab');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('text-primary', 'border-primary');
+            loginTab.classList.remove('text-gray-500');
+            registerTab.classList.add('text-gray-500');
+            registerTab.classList.remove('text-primary', 'border-primary');
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+        });
+
+        registerTab.addEventListener('click', () => {
+            registerTab.classList.add('text-primary', 'border-primary');
+            registerTab.classList.remove('text-gray-500');
+            loginTab.classList.add('text-gray-500');
+            loginTab.classList.remove('text-primary', 'border-primary');
+            registerForm.classList.remove('hidden');
+            loginForm.classList.add('hidden');
+        });
+
+        // Page Navigation (for demo purposes)
+        // In a real implementation, these would be separate HTML files
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page') || 'about';
+
+        // Hide all pages first
+        document.querySelectorAll('main > section').forEach(section => {
+            section.classList.add('hidden');
+        });
+
+        // Show the requested page
+        const pageElement = document.getElementById(`${page}-page`);
+        if (pageElement) {
+            pageElement.classList.remove('hidden');
+        }
+
+        // WhatsApp FAQ button
+        const whatsappFaq = document.getElementById('whatsappFaq');
+        if (whatsappFaq) {
+            whatsappFaq.addEventListener('click', () => {
+                whatsappChatbot.classList.add('open');
+                sendUserMessage('I have a question from the FAQ page');
+            });
+        }
+    </script>
+</body>
+
+</html>
