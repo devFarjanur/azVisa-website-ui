@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Az Visa Consultancy - Your Trusted Visa Partner</title>
+    <title>Job Updates - Az Visa Consultancy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
     <script>
         tailwind.config = {
             theme: {
@@ -25,89 +24,12 @@
                     boxShadow: {
                         'custom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         'custom-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                        'glow': '0 0 20px rgba(37, 99, 235, 0.3)',
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 2s infinite',
-                        'bounce-slow': 'bounce 2s infinite',
-                        'fade-in': 'fadeIn 0.5s ease-in-out',
-                        'slide-up': 'slideUp 0.3s ease-out',
-                        'float': 'float 6s ease-in-out infinite',
-                        'shimmer': 'shimmer 2s infinite',
                     }
                 }
             }
         }
     </script>
     <style>
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -468px 0;
-            }
-
-            100% {
-                background-position: 468px 0;
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .mobile-nav {
-            transition: all 0.3s ease;
-        }
-
         .nav-link {
             position: relative;
         }
@@ -139,235 +61,53 @@
             border-radius: 2px;
         }
 
-        .service-card {
+        .mobile-nav {
             transition: all 0.3s ease;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .stat-item {
+        .job-card {
             transition: all 0.3s ease;
         }
 
-        .stat-item:hover {
+        .job-card:hover {
             transform: translateY(-5px);
         }
 
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: #f59e0b;
-        }
-
-        .whatsapp-button {
+        .urgent-badge {
             animation: pulse 2s infinite;
         }
 
-        /* WhatsApp Chatbot Styles - FIXED */
-        .chatbot-container {
-            transform: translateY(100%);
-            transition: transform 0.3s ease-out;
-            opacity: 0;
-            pointer-events: none;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
-        .chatbot-container.open {
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .message {
-            max-width: 80%;
-            padding: 12px 16px;
-            border-radius: 18px;
-            margin-bottom: 10px;
-            animation: slideUp 0.2s ease-out;
-        }
-
-        .user-message {
+        .filter-btn.active {
             background: #1a56db;
             color: white;
-            margin-left: auto;
-            border-bottom-right-radius: 4px;
-        }
-
-        .bot-message {
-            background: #f1f5f9;
-            color: #1e293b;
-            margin-right: auto;
-            border-bottom-left-radius: 4px;
-        }
-
-        .typing-indicator {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #cbd5e1;
-            margin: 0 2px;
-            animation: bounce-slow 1.3s infinite;
-        }
-
-        .typing-indicator:nth-child(2) {
-            animation-delay: 0.15s;
-        }
-
-        .typing-indicator:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        /* Glass morphism effect */
-        .glass {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(#f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* New Sections Styles */
-        .process-steps .step {
-            transition: all 0.3s ease;
-        }
-
-        .process-steps .step:hover {
-            transform: translateY(-5px);
-        }
-
-        .country-flag {
-            transition: all 0.3s ease;
-        }
-
-        .country:hover .country-flag {
-            transform: scale(1.1);
-        }
-
-        /* New Animations */
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .stagger-animation>* {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .stagger-animation>*:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .stagger-animation>*:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .stagger-animation>*:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .stagger-animation>*:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .stagger-animation>*:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-
-        .stagger-animation>*:nth-child(6) {
-            animation-delay: 0.6s;
-        }
-
-        /* Enhanced Hero Section */
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(26, 86, 219, 0.9) 0%, rgba(30, 66, 159, 0.9) 100%), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        /* Enhanced Cards */
-        .enhanced-card {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .enhanced-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .enhanced-card:hover::before {
-            left: 100%;
-        }
-
-        /* Floating Elements */
-        .floating-element {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        /* Progress Bar Animation */
-        .progress-bar {
-            width: 0;
-            transition: width 2s ease-in-out;
-        }
-
-        .animate-progress {
-            width: 100%;
-        }
-
-        /* Shimmer Effect */
-        .shimmer {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: shimmer 2s infinite;
         }
     </style>
 </head>
 
 <body class="bg-white text-gray-800 overflow-x-hidden">
-    <!-- Enhanced Header -->
+    <!-- Header -->
     <header id="header"
-        class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300">
+        class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-95 shadow-md transition-all duration-300">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center py-4">
-                <!-- Enhanced Logo -->
+                <!-- Logo -->
                 <div class="logo flex items-center">
-                    <a href="#" class="logo-text text-2xl font-bold text-primary flex items-center">
-                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white mr-2">
-                            <i class="fas fa-passport text-sm"></i>
-                        </div>
-                        Az<span class="text-secondary">Visa</span>
-                    </a>
+                    <a href="index.html" class="logo-text text-2xl font-bold text-primary">Az<span
+                            class="text-secondary">Visa</span></a>
                 </div>
 
                 <!-- Desktop Navigation -->
@@ -395,17 +135,16 @@
                 </nav>
 
                 <!-- Navigation Actions -->
-                <div class="nav-actions flex items-center space-x-4">
-                    <div class="language-switcher relative">
-                        <select
-                            class="py-2 px-4 rounded-lg border border-gray-300 bg-white cursor-pointer font-medium text-sm">
-                            <option value="en">🇺🇸 English</option>
-                            <option value="bn">🇧🇩 বাংলা</option>
+                <div class="nav-actions flex items-center">
+                    <div class="language-switcher mr-5 relative">
+                        <select class="py-2 px-4 rounded-lg border border-gray-300 bg-white cursor-pointer font-medium">
+                            <option value="en">English</option>
+                            <option value="bn">বাংলা</option>
                         </select>
                     </div>
-                    <a href="login.html"
-                        class="hidden sm:inline-block py-2 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">Login</a>
-                    <div class="mobile-toggle md:hidden text-xl cursor-pointer text-dark" id="mobileToggle">
+                    <a href="#"
+                        class="hidden sm:inline-block py-2 px-6 bg-transparent border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300">Login</a>
+                    <div class="mobile-toggle md:hidden text-xl cursor-pointer text-dark ml-4" id="mobileToggle">
                         <i class="fas fa-bars"></i>
                     </div>
                 </div>
@@ -414,976 +153,763 @@
 
         <!-- Mobile Navigation -->
         <nav id="nav"
-            class="mobile-nav md:hidden fixed top-16 left-[-100%] w-4/5 h-[calc(100vh-64px)] bg-white/95 backdrop-blur-sm shadow-lg z-40">
+            class="mobile-nav md:hidden fixed top-16 left-[-100%] w-4/5 h-[calc(100vh-64px)] bg-white shadow-lg z-40">
             <ul class="flex flex-col p-8 space-y-5">
                 <li><a href="index.html"
-                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
-                        <i class="fas fa-home mr-3 w-5"></i>Home</a>
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Home</a>
                 </li>
                 <li><a href="about.html"
-                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
-                        <i class="fas fa-info-circle mr-3 w-5"></i>About Us</a></li>
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">About
+                        Us</a></li>
                 <li><a href="services.html"
-                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
-                        <i class="fas fa-concierge-bell mr-3 w-5"></i>Services</a>
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Services</a>
                 </li>
                 <li><a href="jobs.html"
-                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
-                        <i class="fas fa-briefcase mr-3 w-5"></i>Job Updates</a></li>
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Job
+                        Updates</a></li>
                 <li><a href="faq.html"
-                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
-                        <i class="fas fa-question-circle mr-3 w-5"></i>FAQ</a>
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">FAQ</a>
                 </li>
                 <li><a href="contact.html"
-                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg flex items-center">
-                        <i class="fas fa-phone-alt mr-3 w-5"></i>Contact</a>
+                        class="nav-link text-dark font-medium hover:text-primary transition-colors duration-300 text-lg">Contact</a>
                 </li>
-                <li class="pt-4 border-t border-gray-200 mt-4">
-                    <a href="login.html"
-                        class="py-3 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 inline-block w-full text-center">
-                        <i class="fas fa-user mr-2"></i>Login
-                    </a>
+                <li class="pt-4"><a href="#"
+                        class="py-3 px-6 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300 inline-block w-full text-center">Login</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <!-- Enhanced Hero Section -->
-    <section class="hero pt-40 pb-24 md:pt-48 md:pb-32 hero-bg text-white text-center relative overflow-hidden"
-        id="home">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full floating-element"></div>
-            <div class="absolute bottom-20 right-20 w-16 h-16 bg-secondary/30 rounded-full floating-element"
-                style="animation-delay: 2s;"></div>
-            <div class="absolute top-1/3 right-1/4 w-12 h-12 bg-white/20 rounded-full floating-element"
-                style="animation-delay: 4s;"></div>
-            <div class="absolute top-1/2 left-1/4 w-24 h-24 bg-primary/20 rounded-full floating-element"
-                style="animation-delay: 1s;"></div>
-        </div>
-
-        <div class="container mx-auto px-4 sm:px-6 relative z-10">
-            <div class="max-w-4xl mx-auto fade-in-up">
-                <!-- Badge -->
-                <div
-                    class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
-                    <i class="fas fa-star text-yellow-400 mr-2"></i>
-                    Trusted by 5,000+ Successful Applicants
-                </div>
-
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                    Your Gateway to
-                    <span class="gradient-text">Global Opportunities</span>
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">
-                    Expert visa consultancy with a <span class="font-semibold text-amber-300">98% success rate</span>.
-                    Your journey to international career success starts here.
-                </p>
-
-                <!-- Stats Row -->
-                <div class="flex flex-wrap justify-center gap-6 mb-8 text-center">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                        <div class="text-2xl font-bold">5,000+</div>
-                        <div class="text-sm opacity-80">Successful Visas</div>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                        <div class="text-2xl font-bold">15+</div>
-                        <div class="text-sm opacity-80">Countries</div>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                        <div class="text-2xl font-bold">98%</div>
-                        <div class="text-sm opacity-80">Success Rate</div>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                        <div class="text-2xl font-bold">10+</div>
-                        <div class="text-sm opacity-80">Years Experience</div>
-                    </div>
-                </div>
-
-                <div class="hero-buttons flex flex-col sm:flex-row justify-center gap-4 mt-8 stagger-animation">
-                    <a href="#"
-                        class="group py-4 px-8 bg-white text-primary rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 shadow-custom hover:shadow-custom-hover text-lg flex items-center justify-center">
-                        <span>Explore Our Services</span>
-                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                    <a href="#tracking"
-                        class="group py-4 px-8 bg-secondary text-white rounded-lg font-semibold hover:bg-amber-600 transition-all duration-300 transform hover:-translate-y-1 shadow-custom hover:shadow-custom-hover text-lg flex items-center justify-center glass">
-                        <i class="fas fa-search mr-2"></i>
-                        <span>Track Your Visa</span>
-                    </a>
-                </div>
+    <!-- Page Header -->
+    <section class="pt-40 pb-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Latest Job Opportunities</h1>
+                <p class="text-xl opacity-90">Stay updated with the latest G2G programs, embassy notices, and seasonal
+                    opportunities</p>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Mission Section -->
-    <section class="mission py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <!-- Job Filters -->
+    <section class="py-12 bg-light">
         <div class="container mx-auto px-4 sm:px-6">
-            <div class="section-title text-center mb-16 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Why Choose Az Visa?</h2>
-                <p class="text-gray max-w-2xl mx-auto text-lg">We're not just consultants; we're your partners in
-                    achieving international career success.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-animation">
-                <div class="text-center group flex">
-                    <div
-                        class="mission-card enhanced-card bg-white rounded-2xl shadow-custom p-8 hover:shadow-glow transition-all duration-300 flex flex-col h-full">
-                        <div class="relative inline-block mb-6">
-                            <div
-                                class="mission-icon h-20 w-20 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center text-white text-2xl mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                <i class="fas fa-bullseye"></i>
-                            </div>
-                            <div
-                                class="absolute -inset-4 bg-primary/10 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100">
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Proven Success</h3>
-                        <p class="text-gray mb-6 flex-grow">With over 5,000 successful visa applications and a 98%
-                            approval rate,
-                            we
-                            deliver results you can trust.</p>
-                        <div class="flex justify-center">
-                            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-chart-line mr-1"></i>98% Success Rate
-                            </span>
-                        </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="filter-section">
+                    <h3 class="text-lg font-semibold text-dark mb-3">Filter by Country:</h3>
+                    <div class="filter-buttons flex flex-wrap gap-2">
+                        <button
+                            class="filter-btn py-2 px-4 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300 active"
+                            data-country="all">All Countries</button>
+                        <button
+                            class="filter-btn py-2 px-4 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                            data-country="uae">UAE</button>
+                        <button
+                            class="filter-btn py-2 px-4 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                            data-country="poland">Poland</button>
+                        <button
+                            class="filter-btn py-2 px-4 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                            data-country="canada">Canada</button>
+                        <button
+                            class="filter-btn py-2 px-4 bg-white rounded-lg border border-gray-300 font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                            data-country="saudi">Saudi Arabia</button>
                     </div>
                 </div>
 
-                <div class="text-center group flex">
-                    <div
-                        class="mission-card enhanced-card bg-white rounded-2xl shadow-custom p-8 hover:shadow-glow transition-all duration-300 flex flex-col h-full">
-                        <div class="relative inline-block mb-6">
-                            <div
-                                class="mission-icon h-20 w-20 bg-gradient-to-br from-secondary to-amber-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <div
-                                class="absolute -inset-4 bg-secondary/10 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100">
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">End-to-End Support</h3>
-                        <p class="text-gray mb-6 flex-grow">From document preparation to post-arrival guidance, we're
-                            with you at
-                            every
-                            step of your journey.</p>
-                        <div class="flex justify-center">
-                            <span class="bg-amber-100 text-amber-800 text-sm px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-headset mr-1"></i>24/7 Support
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center group flex">
-                    <div
-                        class="mission-card enhanced-card bg-white rounded-2xl shadow-custom p-8 hover:shadow-glow transition-all duration-300 flex flex-col h-full">
-                        <div class="relative inline-block mb-6">
-                            <div
-                                class="mission-icon h-20 w-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <div
-                                class="absolute -inset-4 bg-green-500/10 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100">
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Expert Guidance</h3>
-                        <p class="text-gray mb-6 flex-grow">Our team of certified consultants stays updated with the
-                            latest
-                            immigration
-                            policies and requirements.</p>
-                        <div class="flex justify-center">
-                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-user-tie mr-1"></i>Certified Experts
-                            </span>
-                        </div>
+                <div class="search-section">
+                    <div class="relative">
+                        <input type="text" placeholder="Search jobs..."
+                            class="py-2 px-4 pr-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-64">
+                        <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Services Section -->
-    <section class="services py-20 bg-gradient-to-br from-gray-50 to-blue-50" id="services">
+    <!-- G2G Programs -->
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4 sm:px-6">
-            <div class="section-title text-center mb-16 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Our Premium Visa
-                    Services</h2>
-                <p class="text-gray max-w-2xl mx-auto text-lg">Comprehensive visa solutions tailored to your unique
-                    needs and aspirations.</p>
+            <div class="section-title text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Government to Government
+                    (G2G) Programs</h2>
+                <p class="text-gray max-w-2xl mx-auto">Official employment programs between Bangladesh and partner
+                    countries</p>
             </div>
 
-            <div class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
-                <!-- Enhanced Service Card 1 -->
-                <div
-                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-8 text-center relative">
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary-dark">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- G2G Program 1 -->
+                <div class="job-card bg-white rounded-xl shadow-custom p-6 border-l-4 border-primary">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">G2G
+                                Program</span>
+                            <span
+                                class="urgent-badge bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full ml-2">Urgent</span>
                         </div>
-                        <div
-                            class="service-icon h-20 w-20 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                            <i class="fas fa-passport"></i>
+                        <span class="text-gray text-sm">Posted: June 20, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Malaysia Manufacturing Sector</h3>
+                    <div class="job-meta flex items-center text-gray mb-4">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span class="mr-4">Kuala Lumpur, Malaysia</span>
+                        <i class="fas fa-users mr-2"></i>
+                        <span>250 Positions</span>
+                    </div>
+                    <p class="text-gray mb-4">Government-approved recruitment for manufacturing workers in electronics
+                        and automotive sectors.</p>
+                    <div class="job-details mb-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Salary:</span>
+                            <span class="font-semibold">$500-700/month</span>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">UAE Visa Processing</h3>
-                        <p class="text-gray mb-6 leading-relaxed">Complete visa processing for employment, business, and
-                            tourist visas
-                            to the United Arab Emirates.</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-clock mr-1"></i> 2-3 weeks
-                            </span>
-                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-check-circle mr-1"></i> 95%
-                            </span>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Contract:</span>
+                            <span class="font-semibold">2 Years</span>
                         </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray">Deadline:</span>
+                            <span class="font-semibold text-red-500">July 15, 2025</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="#"
+                            class="flex-1 py-2 bg-primary text-white text-center rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300">Apply
+                            Now</a>
+                        <a href="#"
+                            class="py-2 px-4 bg-light text-dark text-center rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300">Details</a>
                     </div>
                 </div>
 
-                <!-- Enhanced Service Card 2 -->
-                <div
-                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-8 text-center relative">
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-amber-600">
+                <!-- G2G Program 2 -->
+                <div class="job-card bg-white rounded-xl shadow-custom p-6 border-l-4 border-secondary">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-secondary text-white text-xs font-semibold px-3 py-1 rounded-full">G2G
+                                Program</span>
                         </div>
-                        <div
-                            class="service-icon h-20 w-20 bg-gradient-to-br from-secondary to-amber-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                            <i class="fas fa-plane"></i>
+                        <span class="text-gray text-sm">Posted: June 18, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">South Korea EPS Program</h3>
+                    <div class="job-meta flex items-center text-gray mb-4">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span class="mr-4">Seoul, South Korea</span>
+                        <i class="fas fa-users mr-2"></i>
+                        <span>150 Positions</span>
+                    </div>
+                    <p class="text-gray mb-4">Employment Permit System for manufacturing and construction workers
+                        through government channel.</p>
+                    <div class="job-details mb-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Salary:</span>
+                            <span class="font-semibold">$1,500-2,000/month</span>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Poland Work Visa</h3>
-                        <p class="text-gray mb-6 leading-relaxed">Specialized assistance for work permits and employment
-                            visas to Poland
-                            with job placement support.</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-clock mr-1"></i> 4-6 weeks
-                            </span>
-                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-check-circle mr-1"></i> 92%
-                            </span>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Contract:</span>
+                            <span class="font-semibold">3 Years</span>
                         </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray">Deadline:</span>
+                            <span class="font-semibold">July 30, 2025</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="#"
+                            class="flex-1 py-2 bg-primary text-white text-center rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300">Apply
+                            Now</a>
+                        <a href="#"
+                            class="py-2 px-4 bg-light text-dark text-center rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300">Details</a>
                     </div>
                 </div>
 
-                <!-- Enhanced Service Card 3 -->
-                <div
-                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-8 text-center relative">
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-600">
+                <!-- G2G Program 3 -->
+                <div class="job-card bg-white rounded-xl shadow-custom p-6 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">G2G
+                                Program</span>
                         </div>
-                        <div
-                            class="service-icon h-20 w-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                            <i class="fas fa-briefcase"></i>
+                        <span class="text-gray text-sm">Posted: June 15, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Japan SSW Program</h3>
+                    <div class="job-meta flex items-center text-gray mb-4">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span class="mr-4">Tokyo, Japan</span>
+                        <i class="fas fa-users mr-2"></i>
+                        <span>100 Positions</span>
+                    </div>
+                    <p class="text-gray mb-4">Specified Skilled Worker program for nursing care and food service
+                        industries.</p>
+                    <div class="job-details mb-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Salary:</span>
+                            <span class="font-semibold">$1,800-2,200/month</span>
                         </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Overseas Employment</h3>
-                        <p class="text-gray mb-6 leading-relaxed">Connecting skilled professionals with international
-                            job opportunities
-                            across various sectors.</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-clock mr-1"></i> 6-8 weeks
-                            </span>
-                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-check-circle mr-1"></i> 90%
-                            </span>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray">Contract:</span>
+                            <span class="font-semibold">5 Years</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray">Deadline:</span>
+                            <span class="font-semibold">July 10, 2025</span>
                         </div>
                     </div>
-                </div>
-
-                <!-- Enhanced Service Card 4 -->
-                <div
-                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-8 text-center relative">
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-600">
-                        </div>
-                        <div
-                            class="service-icon h-20 w-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                            <i class="fas fa-file-contract"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Documentation Support</h3>
-                        <p class="text-gray mb-6 leading-relaxed">Expert guidance in preparing and verifying all
-                            required documents for
-                            visa applications.</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-clock mr-1"></i> 1-2 weeks
-                            </span>
-                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-check-circle mr-1"></i> 98%
-                            </span>
-                        </div>
+                    <div class="flex gap-2">
+                        <a href="#"
+                            class="flex-1 py-2 bg-primary text-white text-center rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300">Apply
+                            Now</a>
+                        <a href="#"
+                            class="py-2 px-4 bg-light text-dark text-center rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300">Details</a>
                     </div>
                 </div>
-
-                <!-- Enhanced Service Card 5 -->
-                <div
-                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-8 text-center relative">
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div>
-                        <div
-                            class="service-icon h-20 w-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                            <i class="fas fa-user-check"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Visa Consultation</h3>
-                        <p class="text-gray mb-6 leading-relaxed">Personalized consultation to determine the best visa
-                            options based on
-                            your qualifications.</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-clock mr-1"></i> Immediate
-                            </span>
-                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-star mr-1"></i> Free
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Enhanced Service Card 6 -->
-                <div
-                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-8 text-center relative">
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-indigo-600">
-                        </div>
-                        <div
-                            class="service-icon h-20 w-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Post-Visa Support</h3>
-                        <p class="text-gray mb-6 leading-relaxed">Continued assistance after visa approval including
-                            travel arrangements
-                            and settlement guidance.</p>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-clock mr-1"></i> Ongoing
-                            </span>
-                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                <i class="fas fa-check-circle mr-1"></i> 24/7
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12 fade-in-up">
-                <a href="#"
-                    class="group py-4 px-8 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 inline-flex items-center transform hover:-translate-y-0.5">
-                    <span>View All Services</span>
-                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Process Section -->
-    <section class="process py-20 bg-gradient-to-br from-amber-50 to-orange-50" id="process">
+    <!-- Embassy Notices -->
+    <section class="py-20 bg-light">
         <div class="container mx-auto px-4 sm:px-6">
-            <div class="section-title text-center mb-16 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Our Simple 4-Step
-                    Process</h2>
-                <p class="text-gray max-w-2xl mx-auto text-lg">We make visa processing simple and transparent with our
-                    streamlined approach.</p>
+            <div class="section-title text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Embassy Notices &
+                    Updates</h2>
+                <p class="text-gray max-w-2xl mx-auto">Important announcements from embassies and immigration
+                    authorities</p>
             </div>
 
             <div class="max-w-4xl mx-auto">
-                <!-- Process Timeline -->
-                <div class="relative">
-                    <!-- Connecting Line -->
-                    <div
-                        class="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-purple-500 transform -translate-x-1/2 hidden md:block">
+                <!-- Notice 1 -->
+                <div class="notice-item bg-white rounded-xl shadow-custom p-6 mb-6 border-l-4 border-primary">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-dark">UAE Embassy: New Visa Fee Structure</h3>
+                        <span
+                            class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Important</span>
                     </div>
+                    <p class="text-gray mb-4">The UAE Embassy has announced revised visa fees effective from July 1,
+                        2025. All applications submitted after this date will be subject to the new fee structure.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray text-sm"><i class="far fa-clock mr-1"></i> Published: June 22,
+                            2025</span>
+                        <a href="#" class="text-primary font-semibold hover:underline">Read Full Notice</a>
+                    </div>
+                </div>
 
-                    <div class="space-y-12 md:space-y-16">
-                        <!-- Step 1 -->
-                        <div class="relative flex flex-col md:flex-row items-center group">
-                            <div class="flex-1 md:pr-12 md:text-right mb-6 md:mb-0">
-                                <h3 class="text-xl font-bold text-dark mb-3">Free Consultation</h3>
-                                <p class="text-gray">Get personalized advice from our visa experts about your options
-                                    and requirements.</p>
-                            </div>
+                <!-- Notice 2 -->
+                <div class="notice-item bg-white rounded-xl shadow-custom p-6 mb-6 border-l-4 border-secondary">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-dark">Poland Work Permit Processing Time Update</h3>
+                        <span class="bg-secondary text-white text-xs font-semibold px-3 py-1 rounded-full">Update</span>
+                    </div>
+                    <p class="text-gray mb-4">The Polish immigration authorities have reduced work permit processing
+                        times from 90 to 60 days for specific sectors including IT, healthcare, and engineering.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray text-sm"><i class="far fa-clock mr-1"></i> Published: June 18,
+                            2025</span>
+                        <a href="#" class="text-primary font-semibold hover:underline">Read Full Notice</a>
+                    </div>
+                </div>
 
-                            <div class="relative mx-6">
-                                <div
-                                    class="step-icon w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg z-10 relative">
-                                    <span>1</span>
-                                </div>
-                                <div
-                                    class="absolute -inset-4 bg-primary/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100">
-                                </div>
-                            </div>
+                <!-- Notice 3 -->
+                <div class="notice-item bg-white rounded-xl shadow-custom p-6 mb-6 border-l-4 border-red-500">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-dark">Saudi Arabia: Temporary Suspension of Certain Visas</h3>
+                        <span class="bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Alert</span>
+                    </div>
+                    <p class="text-gray mb-4">The Saudi authorities have temporarily suspended issuance of work visas
+                        for the retail and hospitality sectors until further notice. Applications already in process
+                        will continue.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray text-sm"><i class="far fa-clock mr-1"></i> Published: June 15,
+                            2025</span>
+                        <a href="#" class="text-primary font-semibold hover:underline">Read Full Notice</a>
+                    </div>
+                </div>
 
-                            <div class="flex-1 md:pl-12 md:text-left mt-6 md:mt-0">
-                                <div class="bg-white rounded-lg shadow-custom p-4 border-l-4 border-primary">
-                                    <div class="flex items-center text-sm text-gray">
-                                        <i class="fas fa-clock text-primary mr-2"></i>
-                                        <span>30 minutes session</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 2 -->
-                        <div class="relative flex flex-col md:flex-row items-center group">
-                            <div class="flex-1 md:pr-12 md:text-right mb-6 md:mb-0 order-2 md:order-1">
-                                <h3 class="text-xl font-bold text-dark mb-3">Document Preparation</h3>
-                                <p class="text-gray">We help you gather and verify all required documents for your
-                                    application.</p>
-                            </div>
-
-                            <div class="relative mx-6 order-1 md:order-2">
-                                <div
-                                    class="step-icon w-16 h-16 bg-gradient-to-br from-secondary to-amber-600 rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg z-10 relative">
-                                    <span>2</span>
-                                </div>
-                                <div
-                                    class="absolute -inset-4 bg-secondary/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100">
-                                </div>
-                            </div>
-
-                            <div class="flex-1 md:pl-12 md:text-left mt-6 md:mt-0 order-3">
-                                <div class="bg-white rounded-lg shadow-custom p-4 border-l-4 border-secondary">
-                                    <div class="flex items-center text-sm text-gray">
-                                        <i class="fas fa-file-alt text-secondary mr-2"></i>
-                                        <span>1-2 weeks preparation</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 3 -->
-                        <div class="relative flex flex-col md:flex-row items-center group">
-                            <div class="flex-1 md:pr-12 md:text-right mb-6 md:mb-0">
-                                <h3 class="text-xl font-bold text-dark mb-3">Application Submission</h3>
-                                <p class="text-gray">We handle the entire application process with embassies and
-                                    authorities.</p>
-                            </div>
-
-                            <div class="relative mx-6">
-                                <div
-                                    class="step-icon w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg z-10 relative">
-                                    <span>3</span>
-                                </div>
-                                <div
-                                    class="absolute -inset-4 bg-green-500/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100">
-                                </div>
-                            </div>
-
-                            <div class="flex-1 md:pl-12 md:text-left mt-6 md:mt-0">
-                                <div class="bg-white rounded-lg shadow-custom p-4 border-l-4 border-green-500">
-                                    <div class="flex items-center text-sm text-gray">
-                                        <i class="fas fa-paper-plane text-green-500 mr-2"></i>
-                                        <span>2-4 weeks processing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 4 -->
-                        <div class="relative flex flex-col md:flex-row items-center group">
-                            <div class="flex-1 md:pr-12 md:text-right mb-6 md:mb-0 order-2 md:order-1">
-                                <h3 class="text-xl font-bold text-dark mb-3">Visa Approval & Support</h3>
-                                <p class="text-gray">Receive your visa and get post-approval guidance for settlement.
-                                </p>
-                            </div>
-
-                            <div class="relative mx-6 order-1 md:order-2">
-                                <div
-                                    class="step-icon w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg z-10 relative">
-                                    <span>4</span>
-                                </div>
-                                <div
-                                    class="absolute -inset-4 bg-purple-500/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100">
-                                </div>
-                            </div>
-
-                            <div class="flex-1 md:pl-12 md:text-left mt-6 md:mt-0 order-3">
-                                <div class="bg-white rounded-lg shadow-custom p-4 border-l-4 border-purple-500">
-                                    <div class="flex items-center text-sm text-gray">
-                                        <i class="fas fa-check-circle text-purple-500 mr-2"></i>
-                                        <span>Ongoing support</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Notice 4 -->
+                <div class="notice-item bg-white rounded-xl shadow-custom p-6 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-dark">Canada Express Entry Draw #285 Results</h3>
+                        <span class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">New</span>
+                    </div>
+                    <p class="text-gray mb-4">The latest Express Entry draw issued 3,250 invitations to apply for
+                        permanent residence. The minimum CRS score was 482 points. Next draw expected in two weeks.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray text-sm"><i class="far fa-clock mr-1"></i> Published: June 12,
+                            2025</span>
+                        <a href="#" class="text-primary font-semibold hover:underline">Read Full Notice</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Tracking Section -->
-    <section class="tracking py-20 bg-gradient-to-br from-primary to-primary-dark text-white text-center" id="tracking">
+    <!-- Seasonal Opportunities -->
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4 sm:px-6">
-            <div class="section-title text-center mb-16 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 relative inline-block">Track Your Visa Status
+            <div class="section-title text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Seasonal Opportunities
                 </h2>
-                <p class="max-w-2xl mx-auto opacity-90 text-lg">Check the current status of your visa application with
-                    our secure online tracking system.</p>
+                <p class="text-gray max-w-2xl mx-auto">Time-sensitive employment opportunities with specific application
+                    periods</p>
             </div>
 
-            <div class="tracking-form max-w-2xl mx-auto bg-white rounded-2xl shadow-custom p-8 md:p-10 fade-in-up">
-                <h3 class="text-2xl font-bold text-dark mb-6">Enter Your Details</h3>
-                <form id="trackingForm">
-                    <div class="form-group mb-6 text-left">
-                        <label for="passport" class="block text-dark font-medium mb-2">Passport Number</label>
-                        <input type="text" id="passport" placeholder="Enter your passport number"
-                            class="w-full py-3 px-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white"
-                            required>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Seasonal Job 1 -->
+                <div
+                    class="seasonal-job bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl shadow-custom p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="bg-white text-primary text-xs font-semibold px-3 py-1 rounded-full">Agriculture</span>
+                        <span class="text-white text-sm">Season: Summer 2025</span>
                     </div>
-                    <div class="form-group mb-8 text-left">
-                        <label for="reference" class="block text-dark font-medium mb-2">Reference Number</label>
-                        <input type="text" id="reference" placeholder="Enter your reference number"
-                            class="w-full py-3 px-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white"
-                            required>
+                    <h3 class="text-xl font-bold mb-3">Poland Berry Picking Season</h3>
+                    <p class="mb-4 opacity-90">Urgent requirement for 500 agricultural workers for the summer berry
+                        harvesting season in Poland.</p>
+                    <div class="job-details mb-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Duration:</span>
+                            <span class="font-semibold">3 Months (July-Sept)</span>
+                        </div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Salary:</span>
+                            <span class="font-semibold">€1,200-1,500/month</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Application Deadline:</span>
+                            <span class="font-semibold">June 30, 2025</span>
+                        </div>
                     </div>
+                    <a href="#"
+                        class="w-full py-3 bg-secondary text-white text-center rounded-lg font-semibold hover:bg-amber-600 transition-all duration-300 inline-block">Apply
+                        Now</a>
+                </div>
+
+                <!-- Seasonal Job 2 -->
+                <div
+                    class="seasonal-job bg-gradient-to-r from-secondary to-amber-600 text-white rounded-xl shadow-custom p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="bg-white text-secondary text-xs font-semibold px-3 py-1 rounded-full">Tourism</span>
+                        <span class="text-white text-sm">Season: Winter 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">UAE Hotel Staff for Tourist Season</h3>
+                    <p class="mb-4 opacity-90">Multiple positions available in Dubai and Abu Dhabi hotels for the
+                        upcoming winter tourist season.</p>
+                    <div class="job-details mb-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Duration:</span>
+                            <span class="font-semibold">6 Months (Nov-Apr)</span>
+                        </div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Salary:</span>
+                            <span class="font-semibold">$800-1,200/month</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Application Deadline:</span>
+                            <span class="font-semibold">August 15, 2025</span>
+                        </div>
+                    </div>
+                    <a href="#"
+                        class="w-full py-3 bg-primary text-white text-center rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300 inline-block">Apply
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Alerts Subscription -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-2xl mx-auto text-center bg-white rounded-xl shadow-custom p-8 md:p-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4">Get Job Alerts</h2>
+                <p class="text-gray mb-6">Subscribe to receive the latest job opportunities directly to your email</p>
+                <form class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Enter your email"
+                        class="flex-1 py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                     <button type="submit"
-                        class="w-full py-4 bg-gradient-to-r from-secondary to-amber-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5 shadow-custom">
-                        Check Status
-                    </button>
+                        class="py-3 px-6 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300">Subscribe</button>
                 </form>
-                <p class="text-gray text-sm mt-4 text-center">
-                    <i class="fas fa-lock mr-1 text-green-500"></i>
-                    Your information is secure and encrypted
-                </p>
+                <p class="text-gray text-sm mt-4">We respect your privacy. Unsubscribe at any time.</p>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Countries Section -->
-    <section class="countries py-20 bg-gradient-to-br from-green-50 to-teal-50" id="countries">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="section-title text-center mb-16 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Popular Destinations
-                </h2>
-                <p class="text-gray max-w-2xl mx-auto text-lg">We specialize in visa processing for these top
-                    destinations with proven success rates.</p>
-            </div>
-
-            <div
-                class="countries-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 gap-6 max-w-6xl mx-auto stagger-animation">
-                <!-- Country 1 -->
-                <div class="country text-center group flex">
-                    <div
-                        class="country-card enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300 hover:-translate-y-2 flex flex-col h-full w-full">
-                        <div
-                            class="country-flag w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-200 group-hover:border-primary transition-all duration-300 shadow-md">
-                            <img src="https://flagcdn.com/w160/ae.png" alt="UAE" class="w-full h-full object-cover">
-                        </div>
-                        <h3
-                            class="font-semibold text-dark group-hover:text-primary transition-colors duration-300 mb-2">
-                            UAE</h3>
-                        <p class="text-gray text-sm mb-3 flex-grow">Work & Business</p>
-                        <div class="mt-2">
-                            <span
-                                class="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs px-3 py-1 rounded-full font-medium shadow-sm">95%
-                                Success</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Country 2 -->
-                <div class="country text-center group flex">
-                    <div
-                        class="country-card enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300 hover:-translate-y-2 flex flex-col h-full w-full">
-                        <div
-                            class="country-flag w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-200 group-hover:border-primary transition-all duration-300 shadow-md">
-                            <img src="https://flagcdn.com/w160/pl.png" alt="Poland" class="w-full h-full object-cover">
-                        </div>
-                        <h3
-                            class="font-semibold text-dark group-hover:text-primary transition-colors duration-300 mb-2">
-                            Poland
-                        </h3>
-                        <p class="text-gray text-sm mb-3 flex-grow">Work Visa</p>
-                        <div class="mt-2">
-                            <span
-                                class="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs px-3 py-1 rounded-full font-medium shadow-sm">92%
-                                Success</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Country 3 -->
-                <div class="country text-center group flex">
-                    <div
-                        class="country-card enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300 hover:-translate-y-2 flex flex-col h-full w-full">
-                        <div
-                            class="country-flag w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-200 group-hover:border-primary transition-all duration-300 shadow-md">
-                            <img src="https://flagcdn.com/w160/ca.png" alt="Canada" class="w-full h-full object-cover">
-                        </div>
-                        <h3
-                            class="font-semibold text-dark group-hover:text-primary transition-colors duration-300 mb-2">
-                            Canada
-                        </h3>
-                        <p class="text-gray text-sm mb-3 flex-grow">Study & Work</p>
-                        <div class="mt-2">
-                            <span
-                                class="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs px-3 py-1 rounded-full font-medium shadow-sm">90%
-                                Success</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Country 4 -->
-                <div class="country text-center group flex">
-                    <div
-                        class="country-card enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300 hover:-translate-y-2 flex flex-col h-full w-full">
-                        <div
-                            class="country-flag w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-200 group-hover:border-primary transition-all duration-300 shadow-md">
-                            <img src="https://flagcdn.com/w160/gb.png" alt="UK" class="w-full h-full object-cover">
-                        </div>
-                        <h3
-                            class="font-semibold text-dark group-hover:text-primary transition-colors duration-300 mb-2">
-                            UK</h3>
-                        <p class="text-gray text-sm mb-3 flex-grow">Work & Visit</p>
-                        <div class="mt-2">
-                            <span
-                                class="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs px-3 py-1 rounded-full font-medium shadow-sm">88%
-                                Success</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Country 5 -->
-                <div class="country text-center group flex">
-                    <div
-                        class="country-card enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300 hover:-translate-y-2 flex flex-col h-full w-full">
-                        <div
-                            class="country-flag w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-200 group-hover:border-primary transition-all duration-300 shadow-md">
-                            <img src="https://flagcdn.com/w160/au.png" alt="Australia"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <h3
-                            class="font-semibold text-dark group-hover:text-primary transition-colors duration-300 mb-2">
-                            Australia</h3>
-                        <p class="text-gray text-sm mb-3 flex-grow">Skilled Migration</p>
-                        <div class="mt-2">
-                            <span
-                                class="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs px-3 py-1 rounded-full font-medium shadow-sm">85%
-                                Success</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Country 6 -->
-                <div class="country text-center group flex">
-                    <div
-                        class="country-card enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300 hover:-translate-y-2 flex flex-col h-full w-full">
-                        <div
-                            class="country-flag w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-200 group-hover:border-primary transition-all duration-300 shadow-md">
-                            <img src="https://flagcdn.com/w160/sg.png" alt="Singapore"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <h3
-                            class="font-semibold text-dark group-hover:text-primary transition-colors duration-300 mb-2">
-                            Singapore</h3>
-                        <p class="text-gray text-sm mb-3 flex-grow">Business & Work</p>
-                        <div class="mt-2">
-                            <span
-                                class="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs px-3 py-1 rounded-full font-medium shadow-sm">87%
-                                Success</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Page Header -->
+    <div class="page-header py-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Latest Job Opportunities</h1>
+            <p class="text-xl max-w-3xl mx-auto opacity-90">Find your dream job abroad with our verified
+                international employment opportunities</p>
         </div>
-    </section>
+    </div>
 
-    <!-- Enhanced Stats Section -->
-    <section class="stats py-20 bg-gradient-to-r from-primary to-primary-dark text-white">
+    <!-- Job Filters -->
+    <section class="py-12 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Journey in Numbers</h2>
-                    <p class="text-xl opacity-90 max-w-2xl mx-auto">Real results that speak louder than words</p>
-                </div>
-
-                <div class="stats-grid grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 stagger-animation">
-                    <div
-                        class="stat-item text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 border border-white/20">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-3" data-count="5000">0</div>
-                        <div class="stat-text font-medium">Successful Visas</div>
-                        <div class="w-full bg-white/30 rounded-full h-2 mt-4">
-                            <div class="progress-bar bg-amber-400 h-2 rounded-full" data-target="100"></div>
+                <div class="job-filter">
+                    <h3 class="text-xl font-bold text-dark mb-6">Filter Jobs</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="form-group">
+                            <label class="form-label">Country</label>
+                            <select class="form-input">
+                                <option value="">All Countries</option>
+                                <option value="uae">UAE</option>
+                                <option value="poland">Poland</option>
+                                <option value="canada">Canada</option>
+                                <option value="uk">UK</option>
+                                <option value="australia">Australia</option>
+                                <option value="singapore">Singapore</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Job Category</label>
+                            <select class="form-input">
+                                <option value="">All Categories</option>
+                                <option value="it">IT & Technology</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="construction">Construction</option>
+                                <option value="hospitality">Hospitality</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="education">Education</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Experience Level</label>
+                            <select class="form-input">
+                                <option value="">All Levels</option>
+                                <option value="fresher">Fresher</option>
+                                <option value="mid">1-3 Years</option>
+                                <option value="senior">3+ Years</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Salary Range</label>
+                            <select class="form-input">
+                                <option value="">All Ranges</option>
+                                <option value="low">$1000 - $2000</option>
+                                <option value="medium">$2000 - $4000</option>
+                                <option value="high">$4000+</option>
+                            </select>
                         </div>
                     </div>
-                    <div
-                        class="stat-item text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 border border-white/20">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-3" data-count="15">0</div>
-                        <div class="stat-text font-medium">Countries Covered</div>
-                        <div class="w-full bg-white/30 rounded-full h-2 mt-4">
-                            <div class="progress-bar bg-green-400 h-2 rounded-full" data-target="100"></div>
-                        </div>
-                    </div>
-                    <div
-                        class="stat-item text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 border border-white/20">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-3" data-count="98">0</div>
-                        <div class="stat-text font-medium">Success Rate</div>
-                        <div class="w-full bg-white/30 rounded-full h-2 mt-4">
-                            <div class="progress-bar bg-blue-400 h-2 rounded-full" data-target="98"></div>
-                        </div>
-                    </div>
-                    <div
-                        class="stat-item text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 border border-white/20">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-3" data-count="10">0</div>
-                        <div class="stat-text font-medium">Years Experience</div>
-                        <div class="w-full bg-white/30 rounded-full h-2 mt-4">
-                            <div class="progress-bar bg-purple-400 h-2 rounded-full" data-target="100"></div>
-                        </div>
+                    <div class="flex justify-end mt-6">
+                        <button
+                            class="py-3 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300">
+                            <i class="fas fa-filter mr-2"></i>Apply Filters
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Testimonials Section -->
-    <section class="testimonials py-20 bg-gradient-to-br from-purple-50 to-pink-50" id="testimonials">
+    <!-- Job Listings -->
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4 sm:px-6">
-            <div class="section-title text-center mb-16 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Success Stories</h2>
-                <p class="text-gray max-w-2xl mx-auto text-lg">Hear from our satisfied clients who have successfully
-                    obtained visas through our services.</p>
-            </div>
+            <div class="max-w-6xl mx-auto">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark">Available Positions</h2>
+                    <div class="text-gray">Showing <span class="font-bold text-primary">24</span> jobs</div>
+                </div>
 
-            <div
-                class="testimonials-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto stagger-animation">
-                <!-- Testimonial 1 -->
-                <div
-                    class="testimonial enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300">
-                    <div class="testimonial-content mb-4 italic text-gray">
-                        <p>"Az Visa Consultancy made my dream of working in Poland a reality. Their team guided me
-                            through every step of the process with professionalism and expertise."</p>
-                    </div>
-                    <div class="testimonial-author flex items-center">
-                        <div class="author-avatar w-12 h-12 rounded-full overflow-hidden mr-3 border-2 border-primary">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client"
-                                class="w-full h-full object-cover">
+                <div class="grid grid-cols-1 gap-6 stagger-animation">
+                    <!-- Job 1 -->
+                    <div
+                        class="job-card enhanced-card bg-white rounded-2xl shadow-custom p-6 border-l-4 border-primary">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex-1">
+                                <div class="flex items-start mb-4">
+                                    <div
+                                        class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-primary mr-4">
+                                        <i class="fas fa-laptop-code text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-dark mb-1">Senior Software Engineer
+                                        </h3>
+                                        <div class="flex flex-wrap gap-2 mb-2">
+                                            <span class="bg-blue-50 text-blue-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-map-marker-alt mr-1"></i>Poland
+                                            </span>
+                                            <span class="bg-green-50 text-green-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-briefcase mr-1"></i>IT & Technology
+                                            </span>
+                                            <span class="bg-amber-50 text-amber-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-clock mr-1"></i>Full-time
+                                            </span>
+                                        </div>
+                                        <p class="text-gray mb-4">We're looking for an experienced Software
+                                            Engineer to join our growing tech team in Warsaw. Must have 3+ years
+                                            of experience with Java and Spring Boot.</p>
+                                        <div class="flex flex-wrap gap-4 text-sm text-gray">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-dollar-sign mr-1 text-green-500"></i>
+                                                <span>$3000 - $4500/month</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <i class="fas fa-calendar-alt mr-1 text-blue-500"></i>
+                                                <span>Posted 2 days ago</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <i class="fas fa-users mr-1 text-purple-500"></i>
+                                                <span>12 applicants</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 md:mt-0 md:ml-6">
+                                <a href="#"
+                                    class="block w-full md:w-auto py-3 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 text-center">
+                                    Apply Now
+                                </a>
+                                <button
+                                    class="mt-2 w-full md:w-auto py-2 px-4 border border-primary text-primary rounded-lg font-medium hover:bg-blue-50 transition-colors duration-300 text-center">
+                                    Save Job
+                                </button>
+                            </div>
                         </div>
-                        <div class="author-info text-left">
-                            <h4 class="font-bold text-dark text-sm">Rafiqul Islam</h4>
-                            <p class="text-gray text-xs">Software Engineer, Poland</p>
-                            <div class="flex text-amber-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div
+                        class="job-card enhanced-card bg-white rounded-2xl shadow-custom p-6 border-l-4 border-secondary">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex-1">
+                                <div class="flex items-start mb-4">
+                                    <div
+                                        class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-secondary mr-4">
+                                        <i class="fas fa-user-nurse text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-dark mb-1">Registered Nurse</h3>
+                                        <div class="flex flex-wrap gap-2 mb-2">
+                                            <span class="bg-blue-50 text-blue-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-map-marker-alt mr-1"></i>UAE
+                                            </span>
+                                            <span class="bg-green-50 text-green-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-briefcase mr-1"></i>Healthcare
+                                            </span>
+                                            <span class="bg-amber-50 text-amber-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-clock mr-1"></i>Full-time
+                                            </span>
+                                        </div>
+                                        <p class="text-gray mb-4">Leading hospital in Dubai seeks qualified
+                                            nurses with 2+ years of experience. Must have valid nursing license
+                                            and BLS certification.</p>
+                                        <div class="flex flex-wrap gap-4 text-sm text-gray">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-dollar-sign mr-1 text-green-500"></i>
+                                                <span>$2500 - $3500/month</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <i class="fas fa-calendar-alt mr-1 text-blue-500"></i>
+                                                <span>Posted 5 days ago</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <i class="fas fa-users mr-1 text-purple-500"></i>
+                                                <span>28 applicants</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 md:mt-0 md:ml-6">
+                                <a href="#"
+                                    class="block w-full md:w-auto py-3 px-6 bg-gradient-to-r from-secondary to-amber-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 text-center">
+                                    Apply Now
+                                </a>
+                                <button
+                                    class="mt-2 w-full md:w-auto py-2 px-4 border border-secondary text-secondary rounded-lg font-medium hover:bg-amber-50 transition-colors duration-300 text-center">
+                                    Save Job
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div
+                        class="job-card enhanced-card bg-white rounded-2xl shadow-custom p-6 border-l-4 border-green-500">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex-1">
+                                <div class="flex items-start mb-4">
+                                    <div
+                                        class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-500 mr-4">
+                                        <i class="fas fa-hard-hat text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-dark mb-1">Civil Engineer</h3>
+                                        <div class="flex flex-wrap gap-2 mb-2">
+                                            <span class="bg-blue-50 text-blue-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-map-marker-alt mr-1"></i>Canada
+                                            </span>
+                                            <span class="bg-green-50 text-green-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-briefcase mr-1"></i>Engineering
+                                            </span>
+                                            <span class="bg-amber-50 text-amber-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-clock mr-1"></i>Contract
+                                            </span>
+                                        </div>
+                                        <p class="text-gray mb-4">Major construction firm in Toronto requires
+                                            Civil Engineers for infrastructure projects. P.Eng certification
+                                            preferred.</p>
+                                        <div class="flex flex-wrap gap-4 text-sm text-gray">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-dollar-sign mr-1 text-green-500"></i>
+                                                <span>$4000 - $5500/month</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <i class="fas fa-calendar-alt mr-1 text-blue-500"></i>
+                                                <span>Posted 1 week ago</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <i class="fas fa-users mr-1 text-purple-500"></i>
+                                                <span>15 applicants</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 md:mt-0 md:ml-6">
+                                <a href="#"
+                                    class="block w-full md:w-auto py-3 px-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 text-center">
+                                    Apply Now
+                                </a>
+                                <button
+                                    class="mt-2 w-full md:w-auto py-2 px-4 border border-green-500 text-green-500 rounded-lg font-medium hover:bg-green-50 transition-colors duration-300 text-center">
+                                    Save Job
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job 4 -->
+                    <div
+                        class="job-card enhanced-card bg-white rounded-2xl shadow-custom p-6 border-l-4 border-purple-500">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex-1">
+                                <div class="flex items-start mb-4">
+                                    <div
+                                        class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-500 mr-4">
+                                        <i class="fas fa-utensils text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-dark mb-1">Executive Chef</h3>
+                                        <div class="flex flex-wrap gap-2 mb-2">
+                                            <span class="bg-blue-50 text-blue-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-map-marker-alt mr-1"></i>Singapore
+                                            </span>
+                                            <span class="bg-green-50 text-green-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-briefcase mr-1"></i>Hospitality
+                                            </span>
+                                            <span class="bg-amber-50 text-amber-700 text-sm px-3 py-1 rounded-full">
+                                                <i class="fas fa-clock mr-1"></i>Full-time
+                                            </span>
+                                        </div>
+                                        <p class="text-gray mb-4">Luxury hotel in Singapore seeks experienced
+                                            Executive Chef with 5+ years in fine dining. Culinary degree
+                                            required.</p>
+                                        <div class="flex flex-wrap gap-4 text-sm text-gray">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-dollar-sign mr-1 text-green-500"></i>
+                                                <span>$3500 - $5000/month</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <i class="fas fa-calendar-alt mr-1 text-blue-500"></i>
+                                                <span>Posted 3 days ago</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <i class="fas fa-users mr-1 text-purple-500"></i>
+                                                <span>9 applicants</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 md:mt-0 md:ml-6">
+                                <a href="#"
+                                    class="block w-full md:w-auto py-3 px-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 text-center">
+                                    Apply Now
+                                </a>
+                                <button
+                                    class="mt-2 w-full md:w-auto py-2 px-4 border border-purple-500 text-purple-500 rounded-lg font-medium hover:bg-purple-50 transition-colors duration-300 text-center">
+                                    Save Job
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
-                <div
-                    class="testimonial enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300">
-                    <div class="testimonial-content mb-4 italic text-gray">
-                        <p>"Excellent service for my UAE work visa. Professional team and quick processing. Highly
-                            recommended for anyone looking for reliable visa assistance!"</p>
-                    </div>
-                    <div class="testimonial-author flex items-center">
-                        <div class="author-avatar w-12 h-12 rounded-full overflow-hidden mr-3 border-2 border-primary">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="author-info text-left">
-                            <h4 class="font-bold text-dark text-sm">Fatima Begum</h4>
-                            <p class="text-gray text-xs">Healthcare Assistant, UAE</p>
-                            <div class="flex text-amber-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Pagination -->
+                <div class="flex justify-center mt-12">
+                    <nav class="flex items-center space-x-2">
+                        <a href="#"
+                            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-500 hover:bg-gray-50 transition-colors">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#"
+                            class="px-4 py-2 border border-primary bg-primary text-white rounded-lg font-medium">1</a>
+                        <a href="#"
+                            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">2</a>
+                        <a href="#"
+                            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">3</a>
+                        <a href="#"
+                            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-500 hover:bg-gray-50 transition-colors">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </nav>
                 </div>
-
-                <!-- Testimonial 3 -->
-                <div
-                    class="testimonial enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300">
-                    <div class="testimonial-content mb-4 italic text-gray">
-                        <p>"Got my Canada student visa approved in 3 weeks. Az Visa made the complex process simple and
-                            stress-free. Their documentation support was exceptional."</p>
-                    </div>
-                    <div class="testimonial-author flex items-center">
-                        <div class="author-avatar w-12 h-12 rounded-full overflow-hidden mr-3 border-2 border-primary">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="author-info text-left">
-                            <h4 class="font-bold text-dark text-sm">Ayesha Rahman</h4>
-                            <p class="text-gray text-xs">Student, Canada</p>
-                            <div class="flex text-amber-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 4 -->
-                <div
-                    class="testimonial enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300">
-                    <div class="testimonial-content mb-4 italic text-gray">
-                        <p>"Outstanding support for my UK work visa. The team was incredibly responsive and handled all
-                            the paperwork efficiently. Got my visa in just 2 weeks!"</p>
-                    </div>
-                    <div class="testimonial-author flex items-center">
-                        <div class="author-avatar w-12 h-12 rounded-full overflow-hidden mr-3 border-2 border-primary">
-                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="author-info text-left">
-                            <h4 class="font-bold text-dark text-sm">Kamal Hossain</h4>
-                            <p class="text-gray text-xs">IT Consultant, UK</p>
-                            <div class="flex text-amber-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 5 -->
-                <div
-                    class="testimonial enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300">
-                    <div class="testimonial-content mb-4 italic text-gray">
-                        <p>"Amazing experience with Australia skilled migration visa. Their consultants provided
-                            detailed guidance and made the entire process smooth and transparent."</p>
-                    </div>
-                    <div class="testimonial-author flex items-center">
-                        <div class="author-avatar w-12 h-12 rounded-full overflow-hidden mr-3 border-2 border-primary">
-                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="author-info text-left">
-                            <h4 class="font-bold text-dark text-sm">Shahriar Ahmed</h4>
-                            <p class="text-gray text-xs">Civil Engineer, Australia</p>
-                            <div class="flex text-amber-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 6 -->
-                <div
-                    class="testimonial enhanced-card bg-white rounded-2xl shadow-custom p-6 hover:shadow-glow transition-all duration-300">
-                    <div class="testimonial-content mb-4 italic text-gray">
-                        <p>"Singapore business visa process was handled perfectly. Professional team with excellent
-                            communication. Will definitely recommend to others!"</p>
-                    </div>
-                    <div class="testimonial-author flex items-center">
-                        <div class="author-avatar w-12 h-12 rounded-full overflow-hidden mr-3 border-2 border-primary">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="author-info text-left">
-                            <h4 class="font-bold text-dark text-sm">Nusrat Jahan</h4>
-                            <p class="text-gray text-xs">Business Owner, Singapore</p>
-                            <div class="flex text-amber-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- View More Button -->
-            <div class="text-center mt-12 fade-in-up">
-                <a href="#"
-                    class="inline-flex items-center py-3 px-8 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
-                    <span>View More Success Stories</span>
-                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced CTA Section -->
-    <section class="cta py-20 bg-gradient-to-r from-primary to-primary-dark text-white relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-72 h-72 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full translate-x-1/2 translate-y-1/2">
-            </div>
-        </div>
-
-        <div class="container mx-auto px-4 sm:px-6 relative z-10">
-            <div class="max-w-4xl mx-auto text-center fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Begin Your Global Journey?</h2>
-                <p class="text-xl mb-8 opacity-95 max-w-2xl mx-auto">Take the first step towards your international
-                    career with our expert guidance.</p>
-
-                <!-- Trust Indicators -->
-                <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm">
-                    <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                        <i class="fas fa-shield-alt text-amber-400 mr-2"></i>
-                        <span>100% Secure Process</span>
-                    </div>
-                    <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                        <i class="fas fa-clock text-green-400 mr-2"></i>
-                        <span>24/7 Support</span>
-                    </div>
-                    <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                        <i class="fas fa-money-bill-wave text-blue-400 mr-2"></i>
-                        <span>No Hidden Costs</span>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-4 stagger-animation">
-                    <a href="#"
-                        class="group py-4 px-8 bg-secondary text-white rounded-lg font-semibold hover:bg-amber-600 transition-all duration-300 transform hover:-translate-y-1 shadow-custom hover:shadow-glow text-lg flex items-center justify-center">
-                        <i class="fas fa-calendar-check mr-2"></i>
-                        <span>Get Free Consultation</span>
-                    </a>
-                    <a href="tel:+8801234567890"
-                        class="group py-4 px-8 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 shadow-custom hover:shadow-glow text-lg flex items-center justify-center">
-                        <i class="fas fa-phone mr-2"></i>
-                        <span>Call Now</span>
-                    </a>
+    <!-- Job Alert CTA -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Get Job Alerts</h2>
+                <p class="text-gray text-lg mb-8 max-w-2xl mx-auto">Stay updated with the latest international
+                    job opportunities matching your profile</p>
+                <div class="bg-white rounded-2xl shadow-custom p-8 max-w-2xl mx-auto">
+                    <form class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Enter your email"
+                            class="flex-1 py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                        <button type="submit"
+                            class="py-3 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p class="text-gray text-sm mt-4 text-center">
+                        <i class="fas fa-lock mr-1 text-green-500"></i>
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Footer -->
+    <!-- Footer -->
     <footer class="bg-dark text-white pt-20 pb-10">
         <div class="container mx-auto px-4 sm:px-6">
-            <div class="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16 stagger-animation">
+            <div class="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
                 <div class="footer-col">
                     <h3 class="text-xl font-bold mb-6 pb-2 relative">Az Visa Consultancy</h3>
-                    <p class="mb-6 text-gray-300 leading-relaxed">Your trusted partner for overseas employment and visa
-                        processing with a commitment to excellence and client satisfaction.</p>
+                    <p class="mb-6 text-gray-300">Your trusted partner for overseas employment and visa processing with
+                        a commitment to excellence and client satisfaction.</p>
                     <div class="social-links flex gap-4">
                         <a href="#"
-                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-glow">
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-glow">
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
                             <i class="fab fa-twitter"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-glow">
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-glow">
+                            class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-white hover:bg-primary hover:transform hover:-translate-y-1 transition-all duration-300">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
@@ -1392,23 +918,20 @@
                 <div class="footer-col">
                     <h3 class="text-xl font-bold mb-6 pb-2 relative">Quick Links</h3>
                     <ul>
-                        <li class="mb-3"><a href="#"
-                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
-                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Home</a>
+                        <li class="mb-3"><a href="index.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Home</a>
                         </li>
-                        <li class="mb-3"><a href="#"
-                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
-                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>About Us</a></li>
-                        <li class="mb-3"><a href="#"
-                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
-                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Services</a>
+                        <li class="mb-3"><a href="about.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">About
+                                Us</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Services</a>
                         </li>
-                        <li class="mb-3"><a href="#"
-                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
-                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Job Updates</a></li>
-                        <li class="mb-3"><a href="#"
-                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
-                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>FAQ</a>
+                        <li class="mb-3"><a href="jobs.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Job
+                                Updates</a></li>
+                        <li class="mb-3"><a href="faq.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">FAQ</a>
                         </li>
                     </ul>
                 </div>
@@ -1416,22 +939,21 @@
                 <div class="footer-col">
                     <h3 class="text-xl font-bold mb-6 pb-2 relative">Our Services</h3>
                     <ul>
-                        <li class="mb-3"><a href="#"
-                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
-                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>UAE Visa Processing</a></li>
-                        <li class="mb-3"><a href="#"
-                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
-                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Poland Work Visa</a></li>
-                        <li class="mb-3"><a href="#"
-                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
-                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Overseas Employment</a></li>
-                        <li class="mb-3"><a href="#"
-                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
-                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Documentation Support</a>
-                        </li>
-                        <li class="mb-3"><a href="#"
-                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center">
-                                <i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Visa Consultation</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">UAE
+                                Visa Processing</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Poland
+                                Work Visa</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Overseas
+                                Employment</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Documentation
+                                Support</a></li>
+                        <li class="mb-3"><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 hover:pl-2">Visa
+                                Consultation</a></li>
                     </ul>
                 </div>
 
@@ -1464,76 +986,10 @@
         </div>
     </footer>
 
-    <!-- Enhanced WhatsApp Button -->
-    <div class="whatsapp-button fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg z-50 hover:scale-110 transition-transform duration-300 cursor-pointer hover:shadow-glow"
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg z-50 hover:scale-110 transition-transform duration-300 cursor-pointer"
         id="whatsappToggle">
         <i class="fab fa-whatsapp"></i>
-    </div>
-
-    <!-- WhatsApp Chatbot -->
-    <div id="whatsappChatbot"
-        class="chatbot-container fixed bottom-24 right-8 w-80 h-96 bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden border border-gray-200">
-        <!-- Chat Header -->
-        <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-4 flex items-center">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-green-500 mr-3">
-                <i class="fab fa-whatsapp"></i>
-            </div>
-            <div>
-                <h3 class="font-bold">Az Visa Support</h3>
-                <p class="text-xs opacity-80">Typically replies instantly</p>
-            </div>
-            <button id="closeChatbot" class="ml-auto text-white hover:text-gray-200 transition-colors">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-
-        <!-- Chat Messages -->
-        <div class="flex-1 p-4 overflow-y-auto bg-gray-50" id="chatMessages">
-            <div class="message bot-message">
-                <p>Hello! 👋 I'm your Az Visa assistant. How can I help you today?</p>
-            </div>
-            <div class="message bot-message">
-                <p>Choose an option:</p>
-                <div class="mt-2 space-y-2">
-                    <button
-                        class="quick-reply block w-full text-left p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors duration-200 hover:border-green-300"
-                        data-reply="Visa Requirements">
-                        <i class="fas fa-list-alt mr-2 text-green-500"></i>
-                        Visa Requirements
-                    </button>
-                    <button
-                        class="quick-reply block w-full text-left p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors duration-200 hover:border-green-300"
-                        data-reply="Application Status">
-                        <i class="fas fa-search mr-2 text-blue-500"></i>
-                        Application Status
-                    </button>
-                    <button
-                        class="quick-reply block w-full text-left p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors duration-200 hover:border-green-300"
-                        data-reply="Document Checklist">
-                        <i class="fas fa-file-alt mr-2 text-amber-500"></i>
-                        Document Checklist
-                    </button>
-                    <button
-                        class="quick-reply block w-full text-left p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors duration-200 hover:border-green-300"
-                        data-reply="Talk to Agent">
-                        <i class="fas fa-user-tie mr-2 text-purple-500"></i>
-                        Talk to Agent
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Chat Input -->
-        <div class="p-3 border-t border-gray-200 bg-white">
-            <div class="flex items-center">
-                <input type="text" id="chatInput" placeholder="Type a message..."
-                    class="flex-1 py-2 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200">
-                <button id="sendMessage"
-                    class="ml-2 p-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
     </div>
 
     <script>
@@ -1551,11 +1007,11 @@
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
-                header.classList.add('bg-white', 'shadow-lg');
-                header.classList.remove('bg-white/95', 'shadow-md');
+                header.classList.add('bg-opacity-98', 'shadow-lg');
+                header.classList.remove('bg-opacity-95', 'shadow-md');
             } else {
-                header.classList.remove('bg-white', 'shadow-lg');
-                header.classList.add('bg-white/95', 'shadow-md');
+                header.classList.remove('bg-opacity-98', 'shadow-lg');
+                header.classList.add('bg-opacity-95', 'shadow-md');
             }
         });
 
@@ -1569,192 +1025,32 @@
             });
         });
 
-        // WhatsApp Chatbot Functionality
+        // Filter Buttons
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                // In a real implementation, you would filter jobs here
+                const country = btn.getAttribute('data-country');
+                if (country === 'all') {
+                    // Show all jobs
+                    alert('Showing all job opportunities');
+                } else {
+                    // Filter by country
+                    alert(`Filtering jobs for ${country.toUpperCase()}. In the full implementation, jobs would be filtered dynamically.`);
+                }
+            });
+        });
+
+        // WhatsApp Button
         const whatsappToggle = document.getElementById('whatsappToggle');
-        const whatsappChatbot = document.getElementById('whatsappChatbot');
-        const closeChatbot = document.getElementById('closeChatbot');
-        const chatMessages = document.getElementById('chatMessages');
-        const chatInput = document.getElementById('chatInput');
-        const sendMessage = document.getElementById('sendMessage');
-        const quickReplies = document.querySelectorAll('.quick-reply');
-
-        // Toggle chatbot visibility
         whatsappToggle.addEventListener('click', () => {
-            whatsappChatbot.classList.toggle('open');
-        });
-
-        closeChatbot.addEventListener('click', () => {
-            whatsappChatbot.classList.remove('open');
-        });
-
-        // Close chatbot when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!whatsappChatbot.contains(e.target) && !whatsappToggle.contains(e.target) && whatsappChatbot.classList.contains('open')) {
-                whatsappChatbot.classList.remove('open');
-            }
-        });
-
-        // Send message function
-        function sendUserMessage(message) {
-            // Add user message
-            const userMessage = document.createElement('div');
-            userMessage.className = 'message user-message';
-            userMessage.innerHTML = `<p>${message}</p>`;
-            chatMessages.appendChild(userMessage);
-
-            // Clear input
-            chatInput.value = '';
-
-            // Scroll to bottom
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-
-            // Show typing indicator
-            const typingIndicator = document.createElement('div');
-            typingIndicator.className = 'message bot-message';
-            typingIndicator.id = 'typingIndicator';
-            typingIndicator.innerHTML = `
-                <div class="flex items-center">
-                    <div class="typing-indicator"></div>
-                    <div class="typing-indicator"></div>
-                    <div class="typing-indicator"></div>
-                </div>
-            `;
-            chatMessages.appendChild(typingIndicator);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-
-            // Simulate bot response after delay
-            setTimeout(() => {
-                // Remove typing indicator
-                const indicator = document.getElementById('typingIndicator');
-                if (indicator) indicator.remove();
-
-                // Add bot response
-                const botMessage = document.createElement('div');
-                botMessage.className = 'message bot-message';
-
-                let response = '';
-                if (message.toLowerCase().includes('requirement')) {
-                    response = 'Visa requirements vary by country and visa type. For specific requirements, please contact our agents who can provide detailed information based on your destination and purpose of travel.';
-                } else if (message.toLowerCase().includes('status') || message.toLowerCase().includes('application')) {
-                    response = 'To check your application status, please use our online tracking system above or provide your reference number to our support team.';
-                } else if (message.toLowerCase().includes('document') || message.toLowerCase().includes('checklist')) {
-                    response = 'Common documents include passport, photographs, application forms, financial proofs, and supporting letters. The exact checklist depends on your destination country and visa type.';
-                } else if (message.toLowerCase().includes('agent') || message.toLowerCase().includes('human')) {
-                    response = 'I\'ll connect you with a human agent. Please wait a moment... <br><br> <a href="https://wa.me/+8801775282986" class="inline-block mt-2 py-2 px-4 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-colors" target="_blank">Chat with Agent on WhatsApp</a>';
-                } else {
-                    response = 'Thank you for your message. For detailed assistance with visa applications, requirements, or status checks, I recommend speaking with one of our visa specialists. Would you like me to connect you with an agent?';
-                }
-
-                botMessage.innerHTML = `<p>${response}</p>`;
-                chatMessages.appendChild(botMessage);
-
-                // Scroll to bottom
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 1500);
-        }
-
-        // Send message on button click
-        sendMessage.addEventListener('click', () => {
-            const message = chatInput.value.trim();
-            if (message) {
-                sendUserMessage(message);
-            }
-        });
-
-        // Send message on Enter key
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const message = chatInput.value.trim();
-                if (message) {
-                    sendUserMessage(message);
-                }
-            }
-        });
-
-        // Quick reply buttons
-        quickReplies.forEach(button => {
-            button.addEventListener('click', () => {
-                const reply = button.getAttribute('data-reply');
-                sendUserMessage(reply);
-            });
-        });
-
-        // Animated Counter for Stats
-        function animateCounter() {
-            const counters = document.querySelectorAll('.stat-number');
-            const speed = 200;
-
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-count');
-                const count = +counter.innerText;
-                const increment = target / speed;
-
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(() => animateCounter(), 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
-
-        // Progress Bar Animation
-        function animateProgressBars() {
-            const progressBars = document.querySelectorAll('.progress-bar');
-            progressBars.forEach(bar => {
-                const target = bar.getAttribute('data-target');
-                bar.style.width = target + '%';
-            });
-        }
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.classList.contains('stats')) {
-                        animateCounter();
-                        animateProgressBars();
-                    }
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const elementsToAnimate = document.querySelectorAll('.section-title, .mission, .services, .updates, .stats, .cta');
-            elementsToAnimate.forEach(el => {
-                observer.observe(el);
-            });
-
-            // Animate staggered elements immediately
-            const staggeredElements = document.querySelectorAll('.stagger-animation > *');
-            staggeredElements.forEach((el, index) => {
-                el.style.animationDelay = `${index * 0.1}s`;
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+            window.open('https://wa.me/8801234567890', '_blank');
         });
     </script>
 </body>

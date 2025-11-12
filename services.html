@@ -106,262 +106,411 @@
         </nav>
     </header>
 
-    <!-- Services Page -->
-    <!-- Page Header -->
-    <div class="page-header py-20 bg-gradient-to-r from-primary to-primary-dark text-white">
-        <div class="container mx-auto px-4 sm:px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Premium Visa Services</h1>
-            <p class="text-xl max-w-3xl mx-auto opacity-90">Comprehensive visa solutions tailored to your unique
-                needs and aspirations</p>
+    <!-- Enhanced Page Header -->
+    <div
+        class="page-header relative py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-white overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-24 h-24 bg-white/10 rounded-full floating-element"></div>
+            <div class="absolute bottom-20 right-20 w-20 h-20 bg-secondary/30 rounded-full floating-element"
+                style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/3 right-1/4 w-16 h-16 bg-white/15 rounded-full floating-element"
+                style="animation-delay: 4s;"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb mb-6 flex justify-center items-center text-sm text-white/80">
+                <a href="index.html" class="hover:text-white transition-colors duration-300 flex items-center">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+                <span class="mx-3"><i class="fas fa-chevron-right text-xs"></i></span>
+                <span class="text-white font-medium flex items-center">
+                    <i class="fas fa-concierge-bell mr-2"></i>Our Services
+                </span>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-amber-300">Premium
+                    Services</span>
+            </h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90 leading-relaxed">
+                Comprehensive visa solutions <span class="font-semibold text-amber-300">tailored to your unique
+                    needs</span> and global aspirations
+            </p>
+
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <div class="flex items-center bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                    <i class="fas fa-star text-amber-400 mr-2"></i>
+                    <span>98% Success Rate</span>
+                </div>
+                <div class="flex items-center bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                    <i class="fas fa-clock text-green-400 mr-2"></i>
+                    <span>Fast Processing</span>
+                </div>
+                <div class="flex items-center bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                    <i class="fas fa-shield-alt text-blue-400 mr-2"></i>
+                    <span>Secure & Reliable</span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Services List -->
-    <section class="py-20 bg-white">
+    <!-- Enhanced Services Section -->
+    <section class="services py-20 bg-gradient-to-br from-gray-50 to-blue-50" id="services">
         <div class="container mx-auto px-4 sm:px-6">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
-                    <!-- Service 1 -->
-                    <div
-                        class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                        <div class="p-8 text-center relative">
-                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary-dark">
-                            </div>
-                            <div
-                                class="service-icon h-20 w-20 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                <i class="fas fa-passport"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-dark mb-4">UAE Visa Processing</h3>
-                            <p class="text-gray mb-6 leading-relaxed">Complete visa processing for employment,
-                                business, and tourist visas to the United Arab Emirates.</p>
-                            <div class="flex justify-between items-center text-sm mb-6">
-                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-clock mr-1"></i> 2-3 weeks
-                                </span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-check-circle mr-1"></i> 95%
-                                </span>
-                            </div>
-                            <a href="#"
-                                class="inline-block py-3 px-6 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
-                                Learn More
-                            </a>
+            <div class="section-title text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Our Premium Visa
+                    Services</h2>
+                <p class="text-gray max-w-2xl mx-auto text-lg">Comprehensive visa solutions tailored to your unique
+                    needs and aspirations.</p>
+            </div>
+
+            <div
+                class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto gap-8 stagger-animation">
+                <!-- Enhanced Service Card 1 -->
+                <div
+                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-8 text-center relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary-dark">
+                        </div>
+                        <div
+                            class="service-icon h-20 w-20 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-4">UAE Visa Processing</h3>
+                        <p class="text-gray mb-6 leading-relaxed">Complete visa processing for employment, business, and
+                            tourist visas
+                            to the United Arab Emirates.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-clock mr-1"></i> 2-3 weeks
+                            </span>
+                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-check-circle mr-1"></i> 95%
+                            </span>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 2 -->
-                    <div
-                        class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                        <div class="p-8 text-center relative">
-                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-amber-600">
-                            </div>
-                            <div
-                                class="service-icon h-20 w-20 bg-gradient-to-br from-secondary to-amber-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                <i class="fas fa-plane"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-dark mb-4">Poland Work Visa</h3>
-                            <p class="text-gray mb-6 leading-relaxed">Specialized assistance for work permits
-                                and employment visas to Poland with job placement support.</p>
-                            <div class="flex justify-between items-center text-sm mb-6">
-                                <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-clock mr-1"></i> 4-6 weeks
-                                </span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-check-circle mr-1"></i> 92%
-                                </span>
-                            </div>
-                            <a href="#"
-                                class="inline-block py-3 px-6 bg-gradient-to-r from-secondary to-amber-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
-                                Learn More
-                            </a>
+                <!-- Enhanced Service Card 2 -->
+                <div
+                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-8 text-center relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-amber-600">
+                        </div>
+                        <div
+                            class="service-icon h-20 w-20 bg-gradient-to-br from-secondary to-amber-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-4">Poland Work Visa</h3>
+                        <p class="text-gray mb-6 leading-relaxed">Specialized assistance for work permits and employment
+                            visas to Poland
+                            with job placement support.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-clock mr-1"></i> 4-6 weeks
+                            </span>
+                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-check-circle mr-1"></i> 92%
+                            </span>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 3 -->
-                    <div
-                        class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                        <div class="p-8 text-center relative">
-                            <div
-                                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-600">
-                            </div>
-                            <div
-                                class="service-icon h-20 w-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-dark mb-4">Overseas Employment</h3>
-                            <p class="text-gray mb-6 leading-relaxed">Connecting skilled professionals with
-                                international job opportunities across various sectors.</p>
-                            <div class="flex justify-between items-center text-sm mb-6">
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-clock mr-1"></i> 6-8 weeks
-                                </span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-check-circle mr-1"></i> 90%
-                                </span>
-                            </div>
-                            <a href="#"
-                                class="inline-block py-3 px-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
-                                Learn More
-                            </a>
+                <!-- Enhanced Service Card 3 -->
+                <div
+                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-8 text-center relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-600">
+                        </div>
+                        <div
+                            class="service-icon h-20 w-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-4">Overseas Employment</h3>
+                        <p class="text-gray mb-6 leading-relaxed">Connecting skilled professionals with international
+                            job opportunities
+                            across various sectors.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-clock mr-1"></i> 6-8 weeks
+                            </span>
+                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-check-circle mr-1"></i> 90%
+                            </span>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 4 -->
-                    <div
-                        class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                        <div class="p-8 text-center relative">
-                            <div
-                                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-600">
-                            </div>
-                            <div
-                                class="service-icon h-20 w-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                <i class="fas fa-file-contract"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-dark mb-4">Documentation Support</h3>
-                            <p class="text-gray mb-6 leading-relaxed">Expert guidance in preparing and verifying
-                                all required documents for visa applications.</p>
-                            <div class="flex justify-between items-center text-sm mb-6">
-                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-clock mr-1"></i> 1-2 weeks
-                                </span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-check-circle mr-1"></i> 98%
-                                </span>
-                            </div>
-                            <a href="#"
-                                class="inline-block py-3 px-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
-                                Learn More
-                            </a>
+                <!-- Enhanced Service Card 4 -->
+                <div
+                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-8 text-center relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-600">
+                        </div>
+                        <div
+                            class="service-icon h-20 w-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-4">Documentation Support</h3>
+                        <p class="text-gray mb-6 leading-relaxed">Expert guidance in preparing and verifying all
+                            required documents for
+                            visa applications.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-clock mr-1"></i> 1-2 weeks
+                            </span>
+                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-check-circle mr-1"></i> 98%
+                            </span>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 5 -->
-                    <div
-                        class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                        <div class="p-8 text-center relative">
-                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600">
-                            </div>
-                            <div
-                                class="service-icon h-20 w-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                <i class="fas fa-user-check"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-dark mb-4">Visa Consultation</h3>
-                            <p class="text-gray mb-6 leading-relaxed">Personalized consultation to determine the
-                                best visa options based on your qualifications.</p>
-                            <div class="flex justify-between items-center text-sm mb-6">
-                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-clock mr-1"></i> Immediate
-                                </span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-star mr-1"></i> Free
-                                </span>
-                            </div>
-                            <a href="#"
-                                class="inline-block py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
-                                Learn More
-                            </a>
+                <!-- Enhanced Service Card 5 -->
+                <div
+                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-8 text-center relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+                        <div
+                            class="service-icon h-20 w-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-4">Visa Consultation</h3>
+                        <p class="text-gray mb-6 leading-relaxed">Personalized consultation to determine the best visa
+                            options based on
+                            your qualifications.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-clock mr-1"></i> Immediate
+                            </span>
+                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-star mr-1"></i> Free
+                            </span>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 6 -->
-                    <div
-                        class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
-                        <div class="p-8 text-center relative">
-                            <div
-                                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-indigo-600">
-                            </div>
-                            <div
-                                class="service-icon h-20 w-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-dark mb-4">Post-Visa Support</h3>
-                            <p class="text-gray mb-6 leading-relaxed">Continued assistance after visa approval
-                                including travel arrangements and settlement guidance.</p>
-                            <div class="flex justify-between items-center text-sm mb-6">
-                                <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-clock mr-1"></i> Ongoing
-                                </span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
-                                    <i class="fas fa-check-circle mr-1"></i> 24/7
-                                </span>
-                            </div>
-                            <a href="#"
-                                class="inline-block py-3 px-6 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
-                                Learn More
-                            </a>
+                <!-- Enhanced Service Card 6 -->
+                <div
+                    class="service-card enhanced-card bg-white rounded-2xl shadow-custom hover:shadow-glow group transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-8 text-center relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-indigo-600">
+                        </div>
+                        <div
+                            class="service-icon h-20 w-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-4">Post-Visa Support</h3>
+                        <p class="text-gray mb-6 leading-relaxed">Continued assistance after visa approval including
+                            travel arrangements
+                            and settlement guidance.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-clock mr-1"></i> Ongoing
+                            </span>
+                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">
+                                <i class="fas fa-check-circle mr-1"></i> 24/7
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="text-center mt-12 fade-in-up">
+                <a href="#"
+                    class="group py-4 px-8 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-glow transition-all duration-300 inline-flex items-center transform hover:-translate-y-0.5">
+                    <span>View All Services</span>
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Service Process -->
-    <section class="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
+    <!-- Enhanced Process Section -->
+    <section class="process py-20 bg-gradient-to-br from-amber-50 to-orange-50" id="process">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="section-title text-center mb-16 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">How Our Service
-                    Process Works</h2>
-                <p class="text-gray max-w-2xl mx-auto text-lg">A streamlined approach to ensure your visa
-                    application success</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 relative inline-block">Our Simple 4-Step
+                    Process</h2>
+                <p class="text-gray max-w-2xl mx-auto text-lg">We make visa processing simple and transparent with our
+                    streamlined approach.</p>
             </div>
 
             <div class="max-w-4xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 stagger-animation">
-                    <div class="text-center">
-                        <div
-                            class="bg-white rounded-full w-16 h-16 flex items-center justify-center text-primary text-xl font-bold mx-auto mb-4 shadow-lg">
-                            1</div>
-                        <h3 class="font-bold text-dark mb-2">Consultation</h3>
-                        <p class="text-gray text-sm">Free assessment of your profile and options</p>
+                <!-- Process Timeline -->
+                <div class="relative">
+                    <!-- Connecting Line -->
+                    <div
+                        class="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-purple-500 transform -translate-x-1/2 hidden md:block">
                     </div>
-                    <div class="text-center">
-                        <div
-                            class="bg-white rounded-full w-16 h-16 flex items-center justify-center text-primary text-xl font-bold mx-auto mb-4 shadow-lg">
-                            2</div>
-                        <h3 class="font-bold text-dark mb-2">Documentation</h3>
-                        <p class="text-gray text-sm">Preparation and verification of all documents</p>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="bg-white rounded-full w-16 h-16 flex items-center justify-center text-primary text-xl font-bold mx-auto mb-4 shadow-lg">
-                            3</div>
-                        <h3 class="font-bold text-dark mb-2">Application</h3>
-                        <p class="text-gray text-sm">Submission and follow-up with authorities</p>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="bg-white rounded-full w-16 h-16 flex items-center justify-center text-primary text-xl font-bold mx-auto mb-4 shadow-lg">
-                            4</div>
-                        <h3 class="font-bold text-dark mb-2">Approval</h3>
-                        <p class="text-gray text-sm">Visa approval and post-arrival support</p>
+
+                    <div class="space-y-12 md:space-y-16">
+                        <!-- Step 1 -->
+                        <div class="relative flex flex-col md:flex-row items-center group">
+                            <div class="flex-1 md:pr-12 md:text-right mb-6 md:mb-0">
+                                <h3 class="text-xl font-bold text-dark mb-3">Free Consultation</h3>
+                                <p class="text-gray">Get personalized advice from our visa experts about your options
+                                    and requirements.</p>
+                            </div>
+
+                            <div class="relative mx-6">
+                                <div
+                                    class="step-icon w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg z-10 relative">
+                                    <span>1</span>
+                                </div>
+                                <div
+                                    class="absolute -inset-4 bg-primary/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                            </div>
+
+                            <div class="flex-1 md:pl-12 md:text-left mt-6 md:mt-0">
+                                <div class="bg-white rounded-lg shadow-custom p-4 border-l-4 border-primary">
+                                    <div class="flex items-center text-sm text-gray">
+                                        <i class="fas fa-clock text-primary mr-2"></i>
+                                        <span>30 minutes session</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative flex flex-col md:flex-row items-center group">
+                            <div class="flex-1 md:pr-12 md:text-right mb-6 md:mb-0 order-2 md:order-1">
+                                <h3 class="text-xl font-bold text-dark mb-3">Document Preparation</h3>
+                                <p class="text-gray">We help you gather and verify all required documents for your
+                                    application.</p>
+                            </div>
+
+                            <div class="relative mx-6 order-1 md:order-2">
+                                <div
+                                    class="step-icon w-16 h-16 bg-gradient-to-br from-secondary to-amber-600 rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg z-10 relative">
+                                    <span>2</span>
+                                </div>
+                                <div
+                                    class="absolute -inset-4 bg-secondary/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                            </div>
+
+                            <div class="flex-1 md:pl-12 md:text-left mt-6 md:mt-0 order-3">
+                                <div class="bg-white rounded-lg shadow-custom p-4 border-l-4 border-secondary">
+                                    <div class="flex items-center text-sm text-gray">
+                                        <i class="fas fa-file-alt text-secondary mr-2"></i>
+                                        <span>1-2 weeks preparation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative flex flex-col md:flex-row items-center group">
+                            <div class="flex-1 md:pr-12 md:text-right mb-6 md:mb-0">
+                                <h3 class="text-xl font-bold text-dark mb-3">Application Submission</h3>
+                                <p class="text-gray">We handle the entire application process with embassies and
+                                    authorities.</p>
+                            </div>
+
+                            <div class="relative mx-6">
+                                <div
+                                    class="step-icon w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg z-10 relative">
+                                    <span>3</span>
+                                </div>
+                                <div
+                                    class="absolute -inset-4 bg-green-500/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                            </div>
+
+                            <div class="flex-1 md:pl-12 md:text-left mt-6 md:mt-0">
+                                <div class="bg-white rounded-lg shadow-custom p-4 border-l-4 border-green-500">
+                                    <div class="flex items-center text-sm text-gray">
+                                        <i class="fas fa-paper-plane text-green-500 mr-2"></i>
+                                        <span>2-4 weeks processing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="relative flex flex-col md:flex-row items-center group">
+                            <div class="flex-1 md:pr-12 md:text-right mb-6 md:mb-0 order-2 md:order-1">
+                                <h3 class="text-xl font-bold text-dark mb-3">Visa Approval & Support</h3>
+                                <p class="text-gray">Receive your visa and get post-approval guidance for settlement.
+                                </p>
+                            </div>
+
+                            <div class="relative mx-6 order-1 md:order-2">
+                                <div
+                                    class="step-icon w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg z-10 relative">
+                                    <span>4</span>
+                                </div>
+                                <div
+                                    class="absolute -inset-4 bg-purple-500/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                            </div>
+
+                            <div class="flex-1 md:pl-12 md:text-left mt-6 md:mt-0 order-3">
+                                <div class="bg-white rounded-lg shadow-custom p-4 border-l-4 border-purple-500">
+                                    <div class="flex items-center text-sm text-gray">
+                                        <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                                        <span>Ongoing support</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-primary to-primary-dark text-white text-center">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="max-w-3xl mx-auto fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Visa Journey?</h2>
-                <p class="text-xl mb-8 opacity-95">Get expert guidance tailored to your specific needs and goals
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="contact.html"
-                        class="py-4 px-8 bg-secondary text-white rounded-lg font-semibold hover:bg-amber-600 transition-all duration-300 transform hover:-translate-y-1 shadow-custom hover:shadow-glow text-lg">
-                        Get Free Consultation
+    <!-- Enhanced CTA Section -->
+    <section class="cta py-20 bg-gradient-to-r from-primary to-primary-dark text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-72 h-72 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full translate-x-1/2 translate-y-1/2">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Begin Your Global Journey?</h2>
+                <p class="text-xl mb-8 opacity-95 max-w-2xl mx-auto">Take the first step towards your international
+                    career with our expert guidance.</p>
+
+                <!-- Trust Indicators -->
+                <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm">
+                    <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                        <i class="fas fa-shield-alt text-amber-400 mr-2"></i>
+                        <span>100% Secure Process</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                        <i class="fas fa-clock text-green-400 mr-2"></i>
+                        <span>24/7 Support</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                        <i class="fas fa-money-bill-wave text-blue-400 mr-2"></i>
+                        <span>No Hidden Costs</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 stagger-animation">
+                    <a href="#"
+                        class="group py-4 px-8 bg-secondary text-white rounded-lg font-semibold hover:bg-amber-600 transition-all duration-300 transform hover:-translate-y-1 shadow-custom hover:shadow-glow text-lg flex items-center justify-center">
+                        <i class="fas fa-calendar-check mr-2"></i>
+                        <span>Get Free Consultation</span>
                     </a>
                     <a href="tel:+8801234567890"
-                        class="py-4 px-8 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 shadow-custom hover:shadow-glow text-lg">
-                        Call Now
+                        class="group py-4 px-8 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 shadow-custom hover:shadow-glow text-lg flex items-center justify-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        <span>Call Now</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Enhanced Footer -->
     <footer class="bg-dark text-white pt-20 pb-10">
